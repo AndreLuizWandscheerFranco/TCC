@@ -17,12 +17,17 @@
     --medium-gray: #A7A7A7;
     --whitesmoke:whitesmoke;
     --black:#000000;
+    --gray:#C4C4C4;
+}
+main{
+    display: flex;
 }
 
 .login{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     max-width: 500px;
     min-height: 100vh;
@@ -30,8 +35,10 @@
 }
 
 .login_logo{
-    width: 170px;
-    margin-bottom: 30px;
+    width: 130px;
+    margin-bottom: 60px;
+    border-radius: 100%;
+    border: solid 1px var(--blue);
 }
 
 .login_title{
@@ -147,8 +154,8 @@
 }
 
 .login_button{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     padding: 5px;
     display: flex;
     align-items: center;
@@ -160,6 +167,41 @@
     margin-bottom: 60px;
 }
 
-.login_button svg{
+.login_button svg g{
+    fill: white;
+}
 
+.login_button:disabled{
+    cursor: auto;
+    background-color: white;
+    border: 2px solid var(--light-gray);
+}
+
+.login_button:disabled svg g{
+    fill: var(--gray);
+}
+
+.login_link{
+    font-size: 0.8em;
+    text-decoration: none;
+    color: var(--medium-gray);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.pacote{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem{
+    width: 100%;
+    background-image: url('../imagens/fundo_login.png');
+    background-size: cover;
+    background-position: center;
+    flex: 1;
 }
