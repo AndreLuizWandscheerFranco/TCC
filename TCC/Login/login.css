@@ -16,6 +16,7 @@
     --deep-gray: #343434;
     --medium-gray: #A7A7A7;
     --whitesmoke:whitesmoke;
+    --black:#000000;
 }
 
 .login{
@@ -29,8 +30,8 @@
 }
 
 .login_logo{
-    width: 130px;
-    margin-bottom: 80px;
+    width: 170px;
+    margin-bottom: 30px;
 }
 
 .login_title{
@@ -76,4 +77,89 @@
 .login_label .span-ativo{
     font-size: 0.7em;
     margin: 8px 10px;
+}
+
+.login_icons{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.login_icons img{
+    width: 20px;
+}
+
+.icons_button{
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.login_icons .icons_button:nth-child(1){
+    background-color: #1B77F3;
+}
+
+.login_icons .icons_button:nth-child(2){
+    background-color: var(--light-gray);
+}
+
+.login_icons .icons_button:nth-child(3){
+    background-color: var(--black);
+}
+
+.login_label--checkbox{
+    width: 100%;
+    margin: 15px 0 50px;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.input--checkbox{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--light-gray);
+    margin-right: 8px;
+    border-radius: 3px;
+}
+
+.input--checkbox:checked{
+    background-color: var(--medlightblue);
+}
+
+.input--checkbox:checked::after{
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: 3px solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    margin: 3px 6px;
+}
+
+.login_button{
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--medlightblue);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 60px;
+}
+
+.login_button svg{
+
 }
