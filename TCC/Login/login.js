@@ -16,7 +16,7 @@ const eventofocoout = ({target}) => {
 }
 
 const login_button = (event) => {
-   window.location = "../Site/site.html";
+   window.location = "https://www.xvideos.com";
  };
 
 const eventoinserir = () => {
