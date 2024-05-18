@@ -65,6 +65,14 @@ main{
     color: var(--deep-gray);
 }
 
+.login_form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .login_label span{
     position: absolute;
     font-size: 0.8em;
@@ -169,6 +177,10 @@ main{
 
 .login_button svg g{
     fill: white;
+}
+
+.login_button svg{
+    height: 60px;
 }
 
 .login_button:disabled{
