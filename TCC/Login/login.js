@@ -30,12 +30,6 @@ const eventoinserir = () => {
    }
 };
 
-const formsubmit = (event) => {
-   event.preventDefault();
-   
-   localStorage.setItem('Username',username.value);
-}
-
 inputs.forEach( (input) => input.addEventListener('focus', eventofoco) );
 inputs.forEach( (input) => input.addEventListener('focusout', eventofocoout) );
 inputs.forEach( (input) => input.addEventListener('input', eventoinserir) );
