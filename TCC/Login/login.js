@@ -1,7 +1,6 @@
 const inputs = document.querySelectorAll('.input');
 const button = document.querySelector('.login_button');
 const form = document.querySelector('.login_form');
-const username = document.querySelector('.username');
 
 const eventofoco = ({target}) => {
    const span = target.previousElementSibling;
@@ -20,9 +19,9 @@ const login_button = (event) => {
  };
 
 const eventoinserir = () => {
-   const [username, password] = inputs;
+   const [email, password] = inputs;
 
-   if(username.value && password.value.length >= 8 ) {
+   if(email.value && password.value.length >= 8 ) {
       button.removeAttribute('disabled');
       button.addEventListener('click',login_button);
    }else{
