@@ -19,4 +19,18 @@
     --black:#000000;
     --gray:#C4C4C4;
 }
-
+body{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div>img{
+    height: 70%;
+    width: 70%;
+}
