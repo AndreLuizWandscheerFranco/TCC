@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <script src="./login.js" defer></script>
-    <link rel="shortcut icon" href="" type="">
+    <link rel="shortcut icon" href="../imagens/logo.jpg" type="jpg">
     <title>Login</title>
 </head>
 
@@ -17,30 +17,30 @@
 
             <div class="pacote">
 
-                <h1 class="login_logo">AUZA</h1>
+                <img src="../imagens/Auza.png" class="login_logo">
 
-                <form class="login_form">
+                <form class="login_form" action="login.php" method="POST">
 
                     <h1 class="login_title">Fazer login</h1>
 
                     <label class="login_label">
                         <span>Email</span>
-                        <input type="email" name="email" class="input" >
+                        <input type="email" name="email" class="input" required>
                     </label>
 
                     <label class="login_label">
                         <span>Senha</span>
-                        <input type="password" name="password" class="input" >
+                        <input type="password" name="password" class="input" required>
                     </label>
 
-                    
+                    </div>
 
                     <label class="login_label--checkbox">
                         <input type="checkbox" class="input--checkbox">
                         Manter login
                     </label>
-                </div>
-            
+            </div>
+
             <div class="pacote">
 
                 <button type="button" class="login_button" disabled>
@@ -61,8 +61,8 @@
 
                 </button>
 
-                <a href="../cadastro/cadastro.html" class="login_link">Não tem uma conta?</a>
-                <a href="../cadastro/cadastro.html" class="login_link">Crie uma!</a>
+                <a href="#" class="login_link">Não consegue iniciar sessão?</a>
+                <a href="#" class="login_link">Criar conta</a>
 
             </div>
             </form>
