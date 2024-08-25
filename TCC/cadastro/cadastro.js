@@ -2,6 +2,7 @@ const inputs = document.querySelectorAll('.input');
 const button = document.querySelector('.login_button');
 const form = document.querySelector('.login_form');
 
+
 const eventofoco = ({target}) => {
    const span = target.previousElementSibling;
    span.classList.add('span-ativo');
@@ -15,14 +16,14 @@ const eventofocoout = ({target}) => {
 }
 
 const login_button = (event) => {
-    event.preventDefault();
+   event.preventDefault();
    window.location = "../Site/site.html";
  };
 
 const eventoinserir = () => {
-   const [nome,email, password] = inputs;
+   const [nome,email, senha] = inputs;
 
-   if(nome.value && email.value && password.value.length >= 8 ) {
+   if(nome.value && email.value && senha.value.length >= 8 ) {
       button.removeAttribute('disabled');
       button.addEventListener('click',login_button);
    }else{

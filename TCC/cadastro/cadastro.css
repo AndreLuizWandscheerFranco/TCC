@@ -151,6 +151,7 @@ main{
     border-radius: 15px;
     cursor: pointer;
     margin-bottom: 60px;
+    box-shadow: 0px 10px 40px -12px var(--blue);
 }
 
 .login_button svg g{
@@ -165,6 +166,7 @@ main{
     cursor: auto;
     background-color: white;
     border: 2px solid var(--light-gray);
+    box-shadow: none;
 }
 
 .login_button:disabled svg g{
@@ -186,4 +188,17 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and(max-width: 950px){
+    .login{
+        width: 85%
+    }
+}
+
+@media only screen and(max-width: 600px){
+    .login{
+        width: 90%;
+        height: auto;
+    }
 }
