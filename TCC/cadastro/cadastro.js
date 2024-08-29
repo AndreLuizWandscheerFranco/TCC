@@ -20,16 +20,21 @@ const login_button = (event) => {
    window.location = "../Site/site.html";
  };
 
-const eventoinserir = () => {
+ const eventoinserir = () => {
    const [nome,email, senha] = inputs;
 
-   if(nome.value && email.value && senha.value.length >= 8 ) {
+   if(nome.value && validarEmail(email.value) && senha.value.length >= 8 ) {
       button.removeAttribute('disabled');
       button.addEventListener('click',login_button);
    }else{
       button.setAttribute('disabled','');
    }
 };
+
+const validarEmail = (email) => {
+   const regex = /^[^\s@]+@(gmail\.com|hotmail\.com|outlook\.com)$/i;
+   return regex.test(email);
+}
 
 inputs.forEach( (input) => input.addEventListener('focus', eventofoco) );
 inputs.forEach( (input) => input.addEventListener('focusout', eventofocoout) );
