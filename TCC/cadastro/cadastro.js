@@ -1,7 +1,12 @@
 const inputs = document.querySelectorAll('.input');
 const button = document.querySelector('.login_button');
-const form = document.querySelector('.login_form');
 
+const limpar_inputs = () =>{
+   inputs.forEach(input => input.value = '');
+   button.setAttribute('disabled','')
+}
+
+window.addEventListener('pageshow',limpar_inputs);
 
 const eventofoco = ({target}) => {
    const span = target.previousElementSibling;
@@ -39,4 +44,3 @@ const validarEmail = (email) => {
 inputs.forEach( (input) => input.addEventListener('focus', eventofoco) );
 inputs.forEach( (input) => input.addEventListener('focusout', eventofocoout) );
 inputs.forEach( (input) => input.addEventListener('input', eventoinserir) );
-form.addEventListener('submit', formsubmit);
