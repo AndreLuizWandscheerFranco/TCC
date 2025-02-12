@@ -6,7 +6,7 @@ const limpar_inputs = () =>{
    button.setAttribute('disabled','')
 }
 
-window.addEventListener('pageshow',limpar_inputs);
+window.addEventListener('pageshow',limpar_inputs);         
 
 const eventofoco = ({target}) => {
    const span = target.previousElementSibling;

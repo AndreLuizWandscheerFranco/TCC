@@ -26,13 +26,18 @@ main{
     background-image: linear-gradient(45deg,var(--medlightblue),var(--blue));
 }
 
+a{
+    text-decoration: none;
+    color: #1C4588;
+}
+
 .login{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     min-height: 100vh;
     padding: clamp(25px, 8%, 50px);
     background-color: var(--white);
@@ -202,3 +207,4 @@ main{
         height: auto;
     }
 }
+    

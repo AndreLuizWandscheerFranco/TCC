@@ -25,7 +25,7 @@ const login_button = (event) => {
  };
 
 const eventoinserir = () => {
-   const [email, password] = inputs;
+   const [email,password] = inputs;
 
    if(validarEmail(email.value) && password.value.length >= 8 ) {
       button.removeAttribute('disabled');
@@ -43,3 +43,4 @@ const validarEmail = (email) => {
 inputs.forEach( (input) => input.addEventListener('focus', eventofoco) );
 inputs.forEach( (input) => input.addEventListener('focusout', eventofocoout) );
 inputs.forEach( (input) => input.addEventListener('input', eventoinserir) );
+
