@@ -19,7 +19,7 @@
 
                 <h1 class="login_logo"><a href="../Site/site.html">AUZA</a></h1>
 
-                <form class="login_form" method="post" action="config.php">
+                <form class="login_form" method="post" action="cadastro.php">
 
                     <h1 class="login_title">Criar conta</h1>
 
@@ -28,15 +28,23 @@
                         <input type="text" name="nome" class="input" required >
                     </label>
 
+                    <label class="message"><span class="erro_input_nome">Preencha este campo</span></label>
+
                     <label class="login_label">
                         <span>Email</span>
                         <input type="email" name="email" class="input" required >
                     </label>
 
+                    <label class="message"><span class="erro_input">Email inválido</span></label>
+
                     <label class="login_label">
                         <span>Senha</span>
-                        <input type="password" name="senha" class="input" required >
+                        <input type="password" maxlength="20" name="senha" class="input" required >
                     </label>
+
+                    <label class="message"><span class="erro_input_senha">A senha deve ter no mínimo 8 digitos</span></label>
+
+                </form>
 
                     <label class="login_label--checkbox">
                         <input type="checkbox" class="input--checkbox">

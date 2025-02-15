@@ -1,46 +1,92 @@
-const inputs = document.querySelectorAll('.input');
-const button = document.querySelector('.login_button');
+const inputs = document.querySelectorAll(".input");
+const button = document.querySelector(".login_button");
+const erro_input = document.querySelector(".erro_input");
+const erro_input_senha = document.querySelector(".erro_input_senha");
+const erro_input_nome = document.querySelector(".erro_input_nome");
 
-const limpar_inputs = () =>{
-   inputs.forEach(input => input.value = '');
-   button.setAttribute('disabled','')
-}
+const limpar_inputs = () => {
+    inputs.forEach((input) => {
+        input.value = "";
+        input.classList.remove("valido", "invalido");
+        erro_input.style.display = "none";
+        erro_input_senha.style.display = "none";
+    });
+    button.setAttribute("disabled", "");
+};
 
-window.addEventListener('pageshow',limpar_inputs);         
+window.addEventListener("pageshow", limpar_inputs);
 
-const eventofoco = ({target}) => {
-   const span = target.previousElementSibling;
-   span.classList.add('span-ativo');
-}
-
-const eventofocoout = ({target}) => {
-    if(target.value === ''){
+const eventofoco = ({ target }) => {
     const span = target.previousElementSibling;
-    span.classList.remove('span-ativo');
- }
-}
+    span.classList.add("span-ativo");
+};
+
+const eventofocoout = ({ target }) => {
+    if (target.value === "") {
+        const span = target.previousElementSibling;
+        span.classList.remove("span-ativo");
+    }
+};
 
 const login_button = (event) => {
-   event.preventDefault();
-   window.location = "../Site/site.html";
- };
+    event.preventDefault();
+    window.location = "../Site/site.html";
+};
 
- const eventoinserir = () => {
-   const [nome,email, senha] = inputs;
+const eventoinserir = () => {
+    const [nome, email, senha] = inputs;
 
-   if(nome.value && validarEmail(email.value) && senha.value.length >= 8 ) {
-      button.removeAttribute('disabled');
-      button.addEventListener('click',login_button);
-   }else{
-      button.setAttribute('disabled','');
-   }
+    if (nome.value.trim() !== "") {
+        nome.classList.add("valido");
+        nome.classList.remove("invalido");
+        erro_input_nome.style.display = "none";
+    } else {
+        nome.classList.add("invalido");
+        nome.classList.remove("valido");
+        erro_input_nome.style.display = "block";
+    }
+
+    if (validarEmail(email.value)) {
+        email.classList.add("valido");
+        email.classList.remove("invalido");
+        erro_input.style.display = "none";
+    } else if (email.value !== "") {
+        email.classList.add("invalido");
+        email.classList.remove("valido");
+        erro_input.style.display = "block";
+    } else {
+        erro_input.style.display = "none";
+        email.classList.remove("invalido");
+        email.classList.remove("valido");
+    }
+
+    if (senha.value.length >= 8) {
+        senha.classList.add("valido");
+        senha.classList.remove("invalido");
+        erro_input_senha.style.display = "none";
+    } else if (senha.value !== "") {
+        senha.classList.add("invalido");
+        senha.classList.remove("valido");
+        erro_input_senha.style.display = "block";
+    } else {
+        erro_input_senha.style.display = "none";
+        senha.classList.remove("invalido");
+        senha.classList.remove("valido");
+    }
+
+    if (nome.value && validarEmail(email.value) && senha.value.length >= 8) {
+        button.removeAttribute("disabled");
+        button.addEventListener("click", login_button);
+    } else {
+        button.setAttribute("disabled", "");
+    }
 };
 
 const validarEmail = (email) => {
-   const regex = /^[^\s@]+@(gmail\.com|hotmail\.com|outlook\.com)$/i;
-   return regex.test(email);
-}
+    const regex = /^[^\s@]+@(gmail\.com|hotmail\.com|outlook\.com)$/i;
+    return regex.test(email);
+};
 
-inputs.forEach( (input) => input.addEventListener('focus', eventofoco) );
-inputs.forEach( (input) => input.addEventListener('focusout', eventofocoout) );
-inputs.forEach( (input) => input.addEventListener('input', eventoinserir) );
+inputs.forEach((input) => input.addEventListener("focus", eventofoco));
+inputs.forEach((input) => input.addEventListener("focusout", eventofocoout));
+inputs.forEach((input) => input.addEventListener("input", eventoinserir));

@@ -1,22 +1,14 @@
 <?php
+$servidor = "localhost"; // Ou o IP do seu servidor MySQL
+$usuario = "root"; // Usuário do banco de dados
+$senha = ""; // Senha do banco de dados (mantenha vazia se estiver usando XAMPP)
+$banco = "auza_db"; // Nome do banco de dados
 
-    $dbHost = 'localhost';
-    $dbUsername = 'root';
-    $dbPassword = '';
-    $dbName = 'usuarios';
+// Criar a conexão
+$conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
-    $conexao = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
-
-    if(isset($_POST['submit']))
-    {
-        
-        $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
-        $email = mysqli_real_escape_string($conexao, $_POST['email']);
-        $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
-
-        $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
-
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,senha) VALUES('$nome','$email','$senha')");
-
-    }
+// Verificar a conexão
+if ($conexao->connect_error) {
+    die("Falha na conexão: " . $conexao->connect_error);
+}
 ?>;
