@@ -195,12 +195,13 @@ a{
     justify-content: center;
 }
 
-.invalido {
+.invalido,
+.invalido:focus {
     border-color: red;
 }
 
 .valido {
-    border-color: green;
+    border-color: var(--deep-gray);
 }
 
 .message {

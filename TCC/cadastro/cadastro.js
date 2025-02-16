@@ -16,6 +16,12 @@ const limpar_inputs = () => {
 
 window.addEventListener("pageshow", limpar_inputs);
 
+const digitado = {
+    nome: false,
+    email: false,
+    senha: false,
+};
+
 const eventofoco = ({ target }) => {
     const span = target.previousElementSibling;
     span.classList.add("span-ativo");
@@ -36,14 +42,16 @@ const login_button = (event) => {
 const eventoinserir = () => {
     const [nome, email, senha] = inputs;
 
-    if (nome.value.trim() !== "") {
-        nome.classList.add("valido");
-        nome.classList.remove("invalido");
-        erro_input_nome.style.display = "none";
-    } else {
-        nome.classList.add("invalido");
-        nome.classList.remove("valido");
-        erro_input_nome.style.display = "block";
+    if (digitado.nome) {
+        if (nome.value.trim() !== "") {
+            nome.classList.add("valido");
+            nome.classList.remove("invalido");
+            erro_input_nome.style.display = "none";
+        } else {
+            nome.classList.add("invalido");
+            nome.classList.remove("valido");
+            erro_input_nome.style.display = "block";
+        }
     }
 
     if (validarEmail(email.value)) {
@@ -82,11 +90,16 @@ const eventoinserir = () => {
     }
 };
 
+const eventoInput = (e) => {
+    digitado[e.target.name] = true;
+};
+
 const validarEmail = (email) => {
     const regex = /^[^\s@]+@(gmail\.com|hotmail\.com|outlook\.com)$/i;
     return regex.test(email);
 };
 
+inputs.forEach((input) => input.addEventListener("input", eventoInput));
 inputs.forEach((input) => input.addEventListener("focus", eventofoco));
 inputs.forEach((input) => input.addEventListener("focusout", eventofocoout));
 inputs.forEach((input) => input.addEventListener("input", eventoinserir));
