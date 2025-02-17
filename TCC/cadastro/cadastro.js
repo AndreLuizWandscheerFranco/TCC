@@ -68,7 +68,7 @@ const eventoinserir = () => {
         email.classList.remove("valido");
     }
 
-    if (senha.value.length >= 8) {
+    if (senha.value.length >= 8 && validarSenha(senha.value)) {
         senha.classList.add("valido");
         senha.classList.remove("invalido");
         erro_input_senha.style.display = "none";
@@ -82,7 +82,12 @@ const eventoinserir = () => {
         senha.classList.remove("valido");
     }
 
-    if (nome.value && validarEmail(email.value) && senha.value.length >= 8) {
+    if (
+        nome.value &&
+        validarEmail(email.value) &&
+        senha.value.length >= 8 &&
+        validarSenha(senha.value)
+    ) {
         button.removeAttribute("disabled");
         button.addEventListener("click", login_button);
     } else {
@@ -97,6 +102,11 @@ const eventoInput = (e) => {
 const validarEmail = (email) => {
     const regex = /^[^\s@]+@(gmail\.com|hotmail\.com|outlook\.com)$/i;
     return regex.test(email);
+};
+
+const validarSenha = (senha) => {
+    const regex = /^[a-zA-Z0-9]+$/;
+    return regex.test(senha);
 };
 
 inputs.forEach((input) => input.addEventListener("input", eventoInput));
