@@ -109,6 +109,19 @@ const validarSenha = (senha) => {
     return regex.test(senha);
 };
 
+function mostrarsenha() {
+    var inputPass = document.getElementById("pass");
+    var BtnShowPass = document.getElementById("btn-senha");
+
+    if (inputPass.type === "password") {
+        inputPass.setAttribute("type", "text");
+        BtnShowPass.classList.replace("bi-eye", "bi-eye-slash");
+    } else {
+        inputPass.setAttribute("type", "password");
+        BtnShowPass.classList.replace("bi-eye-slash", "bi-eye");
+    }
+}
+
 inputs.forEach((input) => input.addEventListener("input", eventoInput));
 inputs.forEach((input) => input.addEventListener("focus", eventofoco));
 inputs.forEach((input) => input.addEventListener("focusout", eventofocoout));
