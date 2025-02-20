@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auza</title>
-    <link rel="stylesheet" href="site.css">
-    <script src="site.js" defer></script>
+    <link rel="stylesheet" href="carrinho.css">
+    <script src="carrinho.js" defer></script>
     <link rel="shortcut icon" href="../imagens/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
 
-    <header id="header">
+    <header>
 
         <div class="nav-left">
 
-            <a href="site.html">
+            <a href="../Site/site.html">
                 <h1 id="menu-logo">Auza</h1>
             </a>
 
@@ -46,14 +46,23 @@
                 <li><a href="../Login/login.html">Login <i class="bi bi-person-fill"></i></a></li>
             </ul>
 
-            
-
-            <a href="../carrinho/carrinho.html" id="acart"><i class="bi bi-cart" id="cart"></i></a>
+            <a href="carrinho.html" id="acart"><i class="bi bi-cart" id="cart"></i></a>
         </div>
 
     </header>
 
-    <section class="banner"></section>
+    <div class="cart-message">
+
+        <div class="cart-img"> 
+            <i class="bi bi-cart4"></i>
+        </div>
+    
+        <div class="fclogin">
+            <h1>Seu carrinho está vazio!</h1>
+            <button class="cart-login"><a href="../Login/login.html">Faça login</a></button>
+        </div>
+
+    </div>
 
 </body>
 

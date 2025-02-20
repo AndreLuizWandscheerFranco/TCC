@@ -24,8 +24,8 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
+    background-color: white;
 }
 
 #menu-logo {
@@ -96,7 +96,7 @@ header {
     font-size: 30px;
 }
 
-.nav-right ul li a i{
+.nav-right ul li a i {
     font-size: 18px;
     margin-left: 5px;
 }
@@ -137,4 +137,35 @@ header {
     outline: 0;
     font-size: 15px;
     width: 80%;
+}
+
+.cart-login {
+    width: 200px;
+    height: 25px;
+    border: none;
+    background-color: #1c4588;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.cart-login:hover {
+    background-color: var(--lightblue);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.cart-message {
+    width: 500px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-img {
+    margin-right: 20px;
+}
+
+.cart-message div i {
+    font-size: 80px;
 }
