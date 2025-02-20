@@ -45,10 +45,12 @@ a:hover {
     min-height: 100vh;
     padding: clamp(25px, 8%, 50px);
     background-color: var(--white);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgb(22, 22, 22);
     margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 10px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
 }
 
 .login_logo {
@@ -259,7 +261,7 @@ input:-webkit-autofill {
     }
 }
 
-@media only screen and(max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .login {
         width: 90%;
         height: auto;
