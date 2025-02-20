@@ -26,11 +26,6 @@ main {
     background-image: linear-gradient(45deg, var(--medlightblue), var(--blue));
 }
 
-a {
-    text-decoration: none;
-    color: #1c4588;
-}
-
 .login {
     display: flex;
     flex-direction: column;
@@ -45,6 +40,15 @@ a {
     margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 10px;
+}
+
+a {
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #1c4588;
 }
 
 .login_logo {
@@ -158,6 +162,7 @@ a {
     cursor: pointer;
     margin-bottom: 60px;
     box-shadow: 0px 10px 40px -12px var(--blue);
+    transition: all 0.3s ease;
 }
 
 .login_button svg g {
@@ -249,6 +254,12 @@ a {
     position: absolute;
     margin-top: 15px;
     right: 3%;
+}
+
+input:-webkit-autofill {
+    background-color: #ececec !important;
+    -webkit-box-shadow: 0 0 0px 1000px #ececec inset !important;
+    box-shadow: 0 0 0px 1000px #ececec inset !important;
 }
 
 @media only screen and(max-width: 950px) {

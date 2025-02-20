@@ -1,12 +1,11 @@
 <?php
-require 'config.php'; // Inclui o arquivo de conexão
+require 'config.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = trim($_POST["nome"]);
     $email = trim($_POST["email"]);
     $senha = trim($_POST["senha"]);
 
-    // Verificar se o e-mail já existe
     $sql_check = "SELECT id FROM usuarios WHERE email = ?";
     $stmt_check = $conexao->prepare($sql_check);
     $stmt_check->bind_param("s", $email);
@@ -19,10 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $stmt_check->close();
 
-    // Criptografar a senha
     $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-    // Inserir no banco de dados
     $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
     $stmt = $conexao->prepare($sql);
     $stmt->bind_param("sss", $nome, $email, $senha_hash);
