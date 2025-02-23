@@ -73,6 +73,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     z-index: 10;
+    transition: all 0.3s ease;
 }
 
 .nav-left {
@@ -242,5 +243,9 @@ footer .linha2 {
 
 main {
     flex: 1;
-    padding-top: 60px;
+    padding-top: 20%;
+}
+
+header.hidden {
+    transform: translateY(-100%);
 }

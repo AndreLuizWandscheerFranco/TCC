@@ -20,7 +20,8 @@
     font-family: "Lexend Deca", sans-serif;
 }
 
-body {
+
+body{
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -71,6 +72,7 @@ header {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    transition: all 0.3s ease;
     z-index: 10;
 }
 
@@ -211,5 +213,26 @@ footer .linha2 {
 
 main {
     flex: 1;
-    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px;
+    padding-top: 400px;
+    margin-top: 70px;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+.produto {
+    width: 240px;
+    height: 340px;
+    background-color: white;
+    border-radius: 12px;
+    margin: 40px;
+    box-shadow: 0 4px 8px rgb(22, 22, 22);
 }
