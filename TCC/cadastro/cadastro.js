@@ -4,6 +4,8 @@ const erro_input = document.querySelector(".erro_input");
 const erro_input_senha = document.querySelector(".erro_input_senha");
 const erro_input_nome = document.querySelector(".erro_input_nome");
 
+let timeoutId;
+
 const limpar_inputs = () => {
     inputs.forEach((input) => {
         input.value = "";
@@ -32,6 +34,9 @@ const eventofocoout = ({ target }) => {
         const span = target.previousElementSibling;
         span.classList.remove("span-ativo");
     }
+
+    digitado[target.name] = true;
+    eventoinserir();
 };
 
 const login_button = (event) => {
@@ -97,6 +102,11 @@ const eventoinserir = () => {
 
 const eventoInput = (e) => {
     digitado[e.target.name] = true;
+
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+        eventoinserir();
+    }, 1000);
 };
 
 const validarEmail = (email) => {
@@ -125,4 +135,3 @@ function mostrarsenha() {
 inputs.forEach((input) => input.addEventListener("input", eventoInput));
 inputs.forEach((input) => input.addEventListener("focus", eventofoco));
 inputs.forEach((input) => input.addEventListener("focusout", eventofocoout));
-inputs.forEach((input) => input.addEventListener("input", eventoinserir));
