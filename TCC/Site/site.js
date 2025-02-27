@@ -1,6 +1,11 @@
 var cart = document.getElementById("cart");
 var a = document.getElementById("acart");
 
+const produtos = [
+    {nome:"fone", img:"", preco: 24.99},
+    {nome:"fone", img:"", preco: 24.99},
+]
+
 a.addEventListener("mouseenter", function () {
     cart.classList.replace("bi-cart", "bi-cart-fill");
 });
