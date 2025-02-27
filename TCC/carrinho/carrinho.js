@@ -20,3 +20,9 @@ window.addEventListener("scroll", function () {
     }
     lastScrollY = window.scrollY;
 });
+
+VanillaTilt.init(document.querySelectorAll(".produto"), {
+    max: 25,
+    speed: 400,
+    glare: true,
+});
