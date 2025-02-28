@@ -20,7 +20,7 @@
     --gray: #c4c4c4;
 }
 
-body{
+body {
     height: 100vh;
 }
 
@@ -274,5 +274,17 @@ input:-webkit-autofill {
     .login_button {
         width: 50px;
         height: 50px;
+    }
+}
+
+@media only screen and (max-height: 768px) {
+    .login {
+        width: 100%;
+        max-width: 600px;
+        min-height: 100vh;
+        height: auto;
+    }
+    body {
+        height: auto;
     }
 }
