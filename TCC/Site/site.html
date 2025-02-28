@@ -6,87 +6,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auza</title>
     <link rel="stylesheet" href="site.css">
+    <script src="site.js" defer></script>
     <link rel="shortcut icon" href="../imagens/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"
+        integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="conteiner">
+    <header id="header">
+
+        <div class="nav-left">
+
+            <a href="site.html">
+                <h1 id="menu-logo">Auza</h1>
+            </a>
+
+            <ul>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Ofertas</a></li>
+            </ul>
 
         </div>
+
+        <div class="box-busca">
+
+            <div class="lupa">
+                <i class="bi bi-search"></i>
+            </div>
+
+            <div class="input-buscar">
+                <input type="text" name="buscar" id="" placeholder="Buscar produtos...">
+            </div>
+
+        </div>
+
+        <div class="nav-right">
+
+            <ul>
+                <li><a href="../Login/login.html">Login <i class="bi bi-person-fill"></i></a></li>
+            </ul>
+
+
+
+            <a href="../carrinho/carrinho.html" id="acart"><i class="bi bi-cart" id="cart"></i></a>
+        </div>
+
     </header>
 
-    <section class = "banner">
+    <main>
+        <div class="tela">
 
-        <div class="imagem-conteiner">
-
-           <div class="image-list">
-
-            <div class="item">
-                <img src="imagem.jpg"/>
-            </div>
-            <div class="item">
-                <img src="sol.jpg"/>
-            </div>
-            <div class="item">
-                <img src="imagem.jpg"/>
-            </div>
-            <div class="item">
-                <img src="imagem.jpg"/>
-            </div>
-            <div class="item">
-                <img src="imagem.jpg"/>
-            </div>
-            <div class="item">
-                <img src="imagem.jpg"/>
+            <div class="produto">
+                <img src="../imagens/shopping.png" alt="img">
             </div>
 
-           </div>
+            <div class="produto">
+                <img id="nt" src="../imagens/nt.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="aw" src="../imagens/aw.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img src="../imagens/shopping.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="nt" src="../imagens/nt.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="aw" src="../imagens/aw.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img src="../imagens/shopping.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="nt" src="../imagens/nt.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="aw" src="../imagens/aw.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img src="../imagens/shopping.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="nt" src="../imagens/nt.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="aw" src="../imagens/aw.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img src="../imagens/shopping.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="nt" src="../imagens/nt.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="aw" src="../imagens/aw.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img src="../imagens/shopping.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="nt" src="../imagens/nt.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="aw" src="../imagens/aw.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img src="../imagens/shopping.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="nt" src="../imagens/nt.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="aw" src="../imagens/aw.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img src="../imagens/shopping.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="nt" src="../imagens/nt.png" alt="img">
+            </div>
+
+            <div class="produto">
+                <img id="aw" src="../imagens/aw.png" alt="img">
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+
+        <div class="conteiner">
+
+            <section class="linha1">
+
+                <div class="box">
+                    <h3>Suporte</h3>
+                    <div class="links">
+                        <a href="#">Devolução e reembolso</a>
+                        <a href="#">Fale conosco</a>
+                        <a href="#">Prazo e frete</a>
+                        <a href="#">Garantia</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h3>Links úteis</h3>
+                    <div class="links">
+                        <a href="#">Informações legais</a>
+                        <a href="#">Políticas</a>
+                        <a href="#">Sobre nós</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h3>Comunidade</h3>
+                    <div class="links">
+                        <a href="#">Central de respostas</a>
+                        <a href="#">Fóruns de discussão</a>
+                        <a href="#">Notícias</a>
+                    </div>
+                </div>
+
+                <div class="box">
+
+                    <h3>Siga-nos</h3>
+
+                    <div class="links redes">
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="linha2">
+
+                <img src="../imagens/favicon-32x32.png" alt="logo">
+                <p>Auza 2025 &copy; Todos os direitos reservados</p>
+
+            </section>
 
         </div>
 
-    </section>
-
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p><p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit corporis pariatur sunt tempore distinctio ipsum, porro quibusdam culpa, doloribus est eius modi debitis explicabo at nobis repudiandae commodi voluptatum ab.
-    </p>
+    </footer>
 
 </body>
-<script src="site.js"></script>
+
 </html>
