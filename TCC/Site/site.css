@@ -84,6 +84,38 @@ header {
     justify-content: space-between;
 }
 
+.nav-left ul li #mi2::after {
+    content: " ";
+    width: 0px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 1px;
+    position: absolute;
+    top: 45px;
+    left: 238px;
+    transition: width 0.5s;
+}
+
+.nav-left ul li #mi2:hover::after {
+    width: 30px;
+}
+
+.nav-left ul li #mi:hover::after {
+    width: 30px;
+}
+
+.nav-left ul li #mi::after {
+    content: " ";
+    width: 0px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 1px;
+    position: absolute;
+    top: 45px;
+    left: 155px;
+    transition: width 0.5s;
+}
+
 .nav-right {
     width: 300px;
     display: flex;
