@@ -37,3 +37,4 @@ VanillaTilt.init(document.querySelectorAll(".produto"), {
     glare: true,
     "max-glare": 0.5,
 });
+
