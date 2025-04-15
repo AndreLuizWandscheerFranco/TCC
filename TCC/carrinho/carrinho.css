@@ -30,6 +30,10 @@ body {
     transform-style: preserve-3d;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 #menu-logo {
     font-size: 35px;
     color: white;

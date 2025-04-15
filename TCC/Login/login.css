@@ -24,6 +24,10 @@ body {
     height: 100vh;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 main {
     display: flex;
     justify-content: center;
