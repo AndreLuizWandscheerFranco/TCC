@@ -1,17 +1,12 @@
 var cart = document.getElementById("cart");
 var a = document.getElementById("acart");
 
-const produtos = [
-    { nome: "fone", img: "", preco: 24.99 },
-    { nome: "fone", img: "", preco: 24.99 },
-];
-
 a.addEventListener("mouseenter", function () {
-    cart.classList.replace("bi-cart", "bi-cart-fill");
+    cart.classList.replace("bi-cart-fill", "bi-cart");
 });
 
 a.addEventListener("mouseleave", function () {
-    cart.classList.replace("bi-cart-fill", "bi-cart");
+    cart.classList.replace("bi-cart", "bi-cart-fill");
 });
 
 let lastScrollY = window.scrollY;
@@ -27,7 +22,6 @@ window.addEventListener("scroll", function () {
         header.classList.remove("hidden");
         subMenu.classList.remove("hidden2");
     }
-
     lastScrollY = window.scrollY;
 });
 
@@ -35,9 +29,5 @@ VanillaTilt.init(document.querySelectorAll(".produto"), {
     max: 25,
     speed: 400,
     glare: true,
-    "max-glare": 0.1,
+    "max-glare": 0.5,
 });
-
-
-
-

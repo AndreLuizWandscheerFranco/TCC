@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auza</title>
-    <link rel="stylesheet" href="site.css">
-    <script src="site.js" defer></script>
+    <link rel="stylesheet" href="carrinho.css">
+    <script src="carrinho.js" defer></script>
     <link rel="shortcut icon" href="../imagens/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"
@@ -16,11 +16,11 @@
 
 <body>
 
-    <header id="header">
+    <header>
 
         <div class="nav-left">
 
-            <a href="site.html">
+            <a href="../Site/site.html">
                 <h1 id="menu-logo">Auza</h1>
             </a>
 
@@ -49,9 +49,7 @@
                 <li><a href="../Login/login.html">Login <i class="bi bi-person-fill"></i></a></li>
             </ul>
 
-
-
-            <a href="../carrinho/carrinho.html" id="acart"><i class="bi bi-cart" id="cart"></i></a>
+            <a href="carrinho.html" id="acart"><i class="bi bi-cart" id="cart"></i></a>
         </div>
 
     </header>
@@ -60,7 +58,7 @@
         <ul>
             <li><a href="#">Novidades</a></li>
             <li><a href="#">Mais Vendidos</a></li>
-            <li><a href="../Footers/FreteGrates.html">Frete Grátis</a></li>
+            <li><a href="#">Frete Grátis</a></li>
             <li><a href="#">Cupons</a></li>
         </ul>
     </nav>
@@ -68,44 +66,17 @@
     <main>
         <div class="tela">
 
-            <div class="produto">
-                <h1>Controle</h1>
-                <img class="teste" src="../imagens/shopping.png" alt="img">
-                <div class="infos">
-                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
-                    <span class="preco">30</span>
-                </div>
-                <div class="btn-info-compra">
-                    <span class="add-cart"><i class="bi bi-cart"></i></span>
-                    <button class="btn-compra" type="button">Comprar</button>
-                </div>
-            </div>
+            <div class="cart-message">
 
-            <div class="produto">
-                <h1>Notebook</h1>
-                <img class="teste" src="../imagens/nt.png" alt="img">
-                <div class="infos">
-                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                            class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
+                <div class="cart-img">
+                    <i class="bi bi-cart4"></i>
                 </div>
-                <div class="btn-info-compra">
-                    <span class="add-cart"><i class="bi bi-cart"></i></span>
-                    <button class="btn-compra" type="button">Comprar</button>
-                </div>
-            </div>
 
-            <div class="produto">
-                <h1>Relógio</h1>
-                <img class="teste" src="../imagens/aw.png" alt="img">
-                <div class="infos">
-                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                            class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
+                <div class="fclogin">
+                    <h1>Seu carrinho está vazio!</h1>
+                    <button class="cart-login"><a href="../Login/login.html">Faça login</a></button>
                 </div>
-                <div class="btn-info-compra">
-                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
-                    <button class="btn-compra" type="button">Comprar</button>
-                </div>
+
             </div>
 
         </div>
@@ -120,27 +91,28 @@
                 <div class="box">
                     <h3>Suporte</h3>
                     <div class="links">
-                        <a href="../Footers/devolucao.html">Devolução e reembolso</a>
-                        <a href="../Footers/prazo.html">Prazo e frete</a>
-                        <a href="../Footers/garantia.html">Garantia</a>
+                        <a href="#">Devolução e reembolso</a>
+                        <a href="#">Fale conosco</a>
+                        <a href="#">Prazo e frete</a>
+                        <a href="#">Garantia</a>
                     </div>
                 </div>
 
                 <div class="box">
                     <h3>Links úteis</h3>
                     <div class="links">
-                        <a href="../Footers/informacoes-legais.html">Informações legais</a>
-                        <a href="../Footers/politicas.html">Políticas</a>
-                        <a href="../Footers/sobre-nos.html">Sobre nós</a>
+                        <a href="#">Informações legais</a>
+                        <a href="#">Políticas</a>
+                        <a href="#">Sobre nós</a>
                     </div>
                 </div>
 
                 <div class="box">
                     <h3>Comunidade</h3>
                     <div class="links">
-                        <a href="../Footers/perguntas.html">Perguntas frequentes</a>
-                        <a href="../Footers/foruns.html">Fóruns de discussão</a>
-                        <a href="../Footers/noticias.html">Notícias</a>
+                        <a href="#">Central de respostas</a>
+                        <a href="#">Fóruns de discussão</a>
+                        <a href="#">Notícias</a>
                     </div>
                 </div>
 
