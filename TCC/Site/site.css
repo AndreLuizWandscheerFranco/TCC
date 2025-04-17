@@ -388,6 +388,14 @@ main {
     cursor: pointer;
 }
 
+.btn-compra:hover {
+    box-shadow: 0 4px 8px var(--medlightblue);
+}
+
+.add-cart:hover {
+    box-shadow: 0 4px 8px #f20744;
+}
+
 .add-cart {
     width: 30px;
     height: 30px;
