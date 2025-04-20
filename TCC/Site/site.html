@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"
         integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    </script>
+        </script>
 </head>
 
 <body>
@@ -50,7 +50,7 @@
                 <li><a href="../Login/login.html">Login <i class="bi bi-person-fill"></i></a></li>
             </ul>
 
-
+            <a href="../Administrador/add-produtos.html" id="adm-add-produto">Cadastrar produto</a>
 
             <a href="../carrinho/carrinho.html" id="acart"><i class="bi bi-cart" id="cart"></i></a>
         </div>
@@ -95,7 +95,7 @@
                     <span class="preco">30</span>
                 </div>
                 <div class="btn-info-compra">
-                    <span class="add-cart"><i class="bi bi-cart"></i></span>
+                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
                     <button class="btn-compra" type="button">Comprar</button>
                 </div>
             </div>
@@ -106,64 +106,126 @@
                 <div class="infos">
                     <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                             class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
+                    <span class="preco">30</span>
                 </div>
                 <div class="btn-info-compra">
-                    <span class="add-cart"><i class="bi bi-cart"></i></span>
+                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
                     <button class="btn-compra" type="button">Comprar</button>
                 </div>
             </div>
 
-                <div class="produto">
-                    <h1>Relógio</h1>
-                    <img class="teste" src="../imagens/aw.png" alt="img">
-                    <div class="infos">
-                        <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
-                    </div>
-                    <div class="btn-info-compra">
-                        <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
-                        <button class="btn-compra" type="button">Comprar</button>
-                    </div>
+            <div class="produto">
+                <h1>Relógio</h1>
+                <img class="teste" src="../imagens/aw.png" alt="img">
+                <div class="infos">
+                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
+                    <span class="preco">30</span>
                 </div>
-                <div class="produto">
-                    <h1>Relógio</h1>
-                    <img class="teste" src="../imagens/aw.png" alt="img">
-                    <div class="infos">
-                        <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
-                    </div>
-                    <div class="btn-info-compra">
-                        <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
-                        <button class="btn-compra" type="button">Comprar</button>
-                    </div>
+                <div class="btn-info-compra">
+                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
+                    <button class="btn-compra" type="button">Comprar</button>
                 </div>
-                <div class="produto">
-                    <h1>Relógio</h1>
-                    <img class="teste" src="../imagens/aw.png" alt="img">
-                    <div class="infos">
-                        <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
-                    </div>
-                    <div class="btn-info-compra">
-                        <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
-                        <button class="btn-compra" type="button">Comprar</button>
-                    </div>
+            </div>
+            <div class="produto">
+                <h1>Controle</h1>
+                <img class="teste" src="../imagens/shopping.png" alt="img">
+                <div class="infos">
+                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                    <span class="preco">30</span>
                 </div>
-                <div class="produto">
-                    <h1>Relógio</h1>
-                    <img class="teste" src="../imagens/aw.png" alt="img">
-                    <div class="infos">
-                        <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
-                    </div>
-                    <div class="btn-info-compra">
-                        <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
-                        <button class="btn-compra" type="button">Comprar</button>
-                    </div>
+                <div class="btn-info-compra">
+                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
+                    <button class="btn-compra" type="button">Comprar</button>
                 </div>
+            </div>
+
+            <div class="produto">
+                <h1>Notebook</h1>
+                <img class="teste" src="../imagens/nt.png" alt="img">
+                <div class="infos">
+                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
+                    <span class="preco">30</span>
+                </div>
+                <div class="btn-info-compra">
+                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
+                    <button class="btn-compra" type="button">Comprar</button>
+                </div>
+            </div>
+
+            <div class="produto">
+                <h1>Relógio</h1>
+                <img class="teste" src="../imagens/aw.png" alt="img">
+                <div class="infos">
+                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
+                    <span class="preco">30</span>
+                </div>
+                <div class="btn-info-compra">
+                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
+                    <button class="btn-compra" type="button">Comprar</button>
+                </div>
+            </div>
+            <div class="produto">
+                <h1>Controle</h1>
+                <img class="teste" src="../imagens/shopping.png" alt="img">
+                <div class="infos">
+                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                    <span class="preco">30</span>
+                </div>
+                <div class="btn-info-compra">
+                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
+                    <button class="btn-compra" type="button">Comprar</button>
+                </div>
+            </div>
+
+            <div class="produto">
+                <h1>Notebook</h1>
+                <img class="teste" src="../imagens/nt.png" alt="img">
+                <div class="infos">
+                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
+                    <span class="preco">30</span>
+                </div>
+                <div class="btn-info-compra">
+                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
+                    <button class="btn-compra" type="button">Comprar</button>
+                </div>
+            </div>
+
+            <div class="produto">
+                <h1>Relógio</h1>
+                <img class="teste" src="../imagens/aw.png" alt="img">
+                <div class="infos">
+                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                            class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
+                    <span class="preco">30</span>
+                </div>
+                <div class="btn-info-compra">
+                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
+                    <button class="btn-compra" type="button">Comprar</button>
+                </div>
+            </div>
+
 
         </div>
     </main>
+
+    <div class="cookies-msg" id="cookies-msg">
+        <div class="cookies-txt">
+            <p>Este site usa cookies <i class="bi bi-cookie"></i> e tecnologias afins, que são pequenos arquivos ou
+                pedaços de texto baixados para um
+                aparelho quando o visitante acessa um website ou aplicativo. Ao utilizar nosso site você está de acordo
+                com a utilização dos cookies para te proporcionar uma melhor experiência.</p>
+
+            <div class="cookies-btn">
+                <button onclick="aceito()">Aceito</button>
+            </div>
+        </div>
+    </div>
 
     <footer>
 
@@ -222,19 +284,6 @@
         </div>
 
     </footer>
-
-    <div class="cookies-msg" id="cookies-msg">
-        <div class="cookies-txt">
-            <p>Este site usa cookies <i class="bi bi-cookie"></i> e tecnologias afins, que são pequenos arquivos ou pedaços de texto baixados para um
-                aparelho quando o visitante acessa um website ou aplicativo. Ao utilizar nosso site você está de acordo
-                com a utilização dos cookies para te proporcionar uma melhor experiência.</p>
-
-            <div class="cookies-btn">
-                <button onclick="aceito()">Aceito</button>
-            </div>
-        </div>
-    </div> 
-    </div>
 
 </body>
 

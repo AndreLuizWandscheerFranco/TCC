@@ -2,6 +2,8 @@ var cart = document.getElementById("cart");
 var arrowL = document.querySelector(".bi-caret-left");
 var arrowR = document.querySelector(".bi-caret-right");
 var a = document.getElementById("acart");
+var navright = document.querySelector(".nav-right");
+var adm = document.getElementById("adm-add-produto");
 
 const produtos = [
     { nome: "fone", img: "", preco: 24.99 },
@@ -92,3 +94,15 @@ if (localStorage.lgpd == "sim") {
     msgCookies.classList.add("mostrar");
 }
 
+function administrador() {
+    navright.style.width = "400px";
+    adm.style.display = "block";
+}
+
+const precos = document.querySelectorAll('.preco');
+
+precos.forEach(span => {
+  if (!span.textContent.includes('R$')) {
+    span.textContent = 'R$ ' + span.textContent;
+  }
+});

@@ -29,5 +29,26 @@ VanillaTilt.init(document.querySelectorAll(".produto"), {
     max: 25,
     speed: 400,
     glare: true,
-    "max-glare": 0.5,
+    "max-glare": 0.1,
+});
+
+var msgCookies = document.getElementById("cookies-msg");
+
+function aceito() {
+    localStorage.lgpd = "sim";
+    msgCookies.classList.remove("mostrar");
+}
+
+if (localStorage.lgpd == "sim") {
+    msgCookies.classList.remove("mostrar");
+} else {
+    msgCookies.classList.add("mostrar");
+}
+
+const precos = document.querySelectorAll(".preco");
+
+precos.forEach((span) => {
+    if (!span.textContent.includes("R$")) {
+        span.textContent = "R$ " + span.textContent;
+    }
 });

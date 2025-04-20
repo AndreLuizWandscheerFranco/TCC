@@ -480,11 +480,8 @@ main {
 
 .cookies-msg {
     width: 80%;
+    margin: 40px auto;
     background-color: #dbdbdb;
-    position: fixed;
-    bottom: 21%;
-    left: 50%;
-    transform: translate(-50%);
     border-radius: 15px;
     display: none;
 }
@@ -517,9 +514,29 @@ main {
 }
 
 .cookies-msg .cookies-btn button:hover {
-    transform: scale(1.1);
+    transform: scale(1.1)
 }
 
 .cookies-txt > p > i {
     color: brown;
+}
+
+#adm-add-produto {
+    display: none;
+}
+
+#adm-add-produto::after {
+    content: " ";
+    width: 0px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 1px;
+    position: absolute;
+    top: 45px;
+    left: 1111px;
+    transition: width 0.5s;
+}
+
+#adm-add-produto:hover::after {
+    width: 75px;
 }
