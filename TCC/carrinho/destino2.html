@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -65,50 +65,62 @@
 
     <main>
 
-        <div class="tela">
+        <div class="titulo">
 
-            <div class="produto">
-                <h1>Controle</h1>
-                <img class="teste" src="../imagens/shopping.png" alt="img">
-                <div class="infos">
-                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
-                    <span class="preco">30</span>
+            <h1>Carrinho</h1>
+            <button id="removert" type="button" onclick="remocetudo()">Remover todos os produtos do carrinho</button>
+
+        </div>
+
+        <div class="conteiner2">
+
+            <div class="pro-car">
+
+                <div class="part">
+
+                    <div class="img-p-car">
+                        <img src="../imagens/aw.png" alt="produto">
+                    </div>
+
+                    <div class="desc">
+                        <h3>Relogio Inteligente Smartwatch MICROWEAR S10 Pro + Serie 10 NFC Chatgpt Gps Original Masculino Feminino
+                            (Preto)</h3>
+
+                            <p style="color: green;">Em estoque</p>
+
+                            <p id="preco">R$ 30</p>
+                    </div>
+
                 </div>
-                <div class="btn-info-compra">
-                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
-                    <button class="btn-compra" type="button">Comprar</button>
+
+                <div class="part">
+
+                    <div class="img-p-car">
+                        <img src="../imagens/aw.png" alt="produto">
+                    </div>
+
+                    <div class="desc">
+                        <h3>Relogio Inteligente Smartwatch MICROWEAR S10 Pro + Serie 10 NFC Chatgpt Gps Original Masculino Feminino
+                            (Preto)</h3>
+
+                            <p style="color: green;">Em estoque</p>
+
+                            <p id="preco">R$ 30</p>
+                    </div>
+
                 </div>
+
             </div>
 
-            <div class="produto">
-                <h1>Notebook</h1>
-                <img class="teste" src="../imagens/nt.png" alt="img">
-                <div class="infos">
-                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                            class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
-                    <span class="preco">30</span>
-                </div>
-                <div class="btn-info-compra">
-                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
-                    <button class="btn-compra" type="button">Comprar</button>
-                </div>
+            <div class="pag-car">
+                <h2>Total(2 produtos): R$ 60,00</h2>
+                <button type="button" class="btn-pagar">Continuar para o pagamento</button>
             </div>
 
-            <div class="produto">
-                <h1>Relógio</h1>
-                <img class="teste" src="../imagens/aw.png" alt="img">
-                <div class="infos">
-                    <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                            class="bi bi-star-fill"></i><i class="bi bi-star"></i></p>
-                    <span class="preco">30</span>
-                </div>
-                <div class="btn-info-compra">
-                    <span class="add-cart" onclick="adicionar()"><i class="bi bi-cart"></i></span>
-                    <button class="btn-compra" type="button">Comprar</button>
-                </div>
-            </div>
+        </div>
 
+        <div class="bordinha">
+            <h2>Total(2 produtos): R$ 60,00</h2>
         </div>
 
     </main>
@@ -125,7 +137,7 @@
             </div>
         </div>
     </div>
-    
+
     <footer>
 
         <div class="conteiner">

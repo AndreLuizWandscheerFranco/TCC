@@ -38,3 +38,9 @@ if (localStorage.lgpd == "sim") {
 } else {
     msgCookies.classList.add("mostrar");
 }
+
+function trocarImagem(elemento) {
+    const imagemPrincipal = document.getElementById("imagem-principal");
+    imagemPrincipal.src = elemento.src;
+}
+
