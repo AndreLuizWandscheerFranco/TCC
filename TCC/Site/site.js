@@ -106,3 +106,7 @@ precos.forEach(span => {
     span.textContent = 'R$ ' + span.textContent;
   }
 });
+
+function adicionar() {
+    
+}

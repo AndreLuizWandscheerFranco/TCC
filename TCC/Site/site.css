@@ -521,23 +521,3 @@ main {
     color: brown;
 }
 
-#adm-add-produto {
-    display: none;
-}
-
-#adm-add-produto::after {
-    content: " ";
-    width: 0px;
-    height: 4px;
-    background-color: #fff;
-    border-radius: 1px;
-    position: absolute;
-    top: 45px;
-    right: 113px;
-    transition: width 0.5s;
-}
-
-#adm-add-produto:hover::after {
-    width: 75px;
-}
-
