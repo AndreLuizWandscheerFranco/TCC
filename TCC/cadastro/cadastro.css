@@ -201,7 +201,7 @@ a:hover {
     text-decoration: none;
     color: var(--medium-gray);
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: 700;
 }
 
