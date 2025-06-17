@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+:root {
+    --blue: #021130;
+    --medlightblue: #1c4588;
+    --lightblue: #3c81c6;
+    --white: #ffff;
+    --light-gray: #ececec;
+    --deep-gray: #343434;
+    --medium-gray: #a7a7a7;
+    --whitesmoke: whitesmoke;
+    --black: #000000;
+    --gray: #c4c4c4;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--medlightblue);
+    padding: 30% 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.faq {
+    width: 1000px;
+}
+
+.faq h1 {
+    font-size: 3rem;
+    margin-bottom: 60px;
+}
+
+.pergs {
+    width: 100%;
+    list-style: none;
+}
+
+.pergs li {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.pergs li label {
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.pergs li label span {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.pergs li label::before {
+    content: " + ";
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.pergs input[type="radio"] {
+    display: none;
+}
+
+.pergs .resposta {
+    color: #535353;
+    padding: 0 14px;
+    background-color: white;
+    line-height: 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+
+.pergs input[type="radio"]:checked + label + .resposta {
+    max-height: 400px;
+    padding: 10px 10px 20px;
+}
+
+.pergs input[type="radio"]:checked + label span {
+    background-color: #f20744;
+}
+
+.pergs input[type="radio"]:checked + label::before {
+    content: "-";
+}
+
+.pergs input[type="radio"]:checked + label + .resposta {
+    border-radius: 0 0 10px 10px;
+}
+
+.pergs input[type="radio"]:not(:checked) + label + .resposta {
+    transition: border-radius 0.5s;
+}
+
+.pergs input[type="radio"]:checked + label {
+    border-radius: 10px 10px 0 0;
+}
