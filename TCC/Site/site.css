@@ -33,6 +33,13 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-text-fill-color: black !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 #menu-logo {
     font-size: 35px;
     color: white;
@@ -585,7 +592,8 @@ main {
 }
 
 .cepinput:focus,
-.cepinput:valid {
+.cepinput:valid:not([name="complemento"]),
+.cepinput[name="complemento"]:not(:placeholder-shown) {
     outline: solid 1px gray;
     box-shadow: 2px 2px 10px gray;
 }
@@ -645,4 +653,3 @@ main {
 body.bloqueia-scroll {
     overflow: hidden;
 }
-
