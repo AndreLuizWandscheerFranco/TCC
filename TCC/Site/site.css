@@ -129,6 +129,11 @@ header {
     justify-content: space-between;
 }
 
+.nav-left #mi2 {
+    cursor: pointer;
+    margin-left: 20px;
+}
+
 .nav-left ul li #mi2::after {
     content: " ";
     width: 0px;
@@ -137,7 +142,7 @@ header {
     border-radius: 1px;
     position: absolute;
     top: 45px;
-    left: 238px;
+    left: 265px;
     transition: width 0.5s;
 }
 
@@ -157,7 +162,7 @@ header {
     border-radius: 1px;
     position: absolute;
     top: 45px;
-    left: 155px;
+    left: 164px;
     transition: width 0.5s;
 }
 
@@ -514,10 +519,130 @@ main {
 }
 
 .cookies-msg .cookies-btn button:hover {
-    transform: scale(1.1)
+    transform: scale(1.1);
 }
 
 .cookies-txt > p > i {
     color: brown;
+}
+
+#ende {
+    margin-bottom: 20px;
+}
+
+.cepform {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.432);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.form {
+    width: 60%;
+    min-width: 400px;
+    min-height: 350px;
+    background-color: #ffffff96;
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cepinput {
+    width: 300px;
+    height: 50px;
+    border: none;
+    margin-top: 20px;
+    padding: 8px;
+    border-radius: 6px;
+    background-color: #fff !important;
+    transition: box-shadow 0.2s;
+}
+
+.cepinput:focus,
+.cepinput:valid {
+    outline: solid 1px gray;
+    box-shadow: 2px 2px 10px gray;
+}
+
+.botoes {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 30px;
+    gap: 90px;
+    width: 92%;
+}
+
+.fechar {
+    width: 105px;
+    height: 34px;
+    border-radius: 4px;
+    border: none;
+    background-color: #fefefe;
+    color: #6d6666;
+    cursor: pointer;
+}
+
+.enviar {
+    width: 105px;
+    height: 34px;
+    border-radius: 4px;
+    border: none;
+    background-color: #f20744;
+    color: white;
+    cursor: pointer;
+}
+
+.enviar:hover {
+    filter: brightness(1.2);
+}
+
+.cepform.abrirformcep {
+    display: flex;
+}
+
+@keyframes abrircep {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20px, -5px);
+    }
+    to {
+        opacity: 1;
+        transform: rotate3d(0, 0, 0);
+    }
+}
+
+.abrirformcep .form {
+    animation: abrircep 0.3s;
+}
+
+body.bloqueia-scroll {
+    overflow: hidden;
 }
 

@@ -129,6 +129,11 @@ header {
     justify-content: space-between;
 }
 
+.nav-left #mi2 {
+    cursor: pointer;
+    margin-left: 20px;
+}
+
 .nav-left ul li #mi2::after {
     content: " ";
     width: 0px;
@@ -137,7 +142,7 @@ header {
     border-radius: 1px;
     position: absolute;
     top: 45px;
-    left: 238px;
+    left: 265px;
     transition: width 0.5s;
 }
 
@@ -157,7 +162,7 @@ header {
     border-radius: 1px;
     position: absolute;
     top: 45px;
-    left: 155px;
+    left: 164px;
     transition: width 0.5s;
 }
 
@@ -338,7 +343,7 @@ main {
 }
 
 .cookies-msg .cookies-btn button:hover {
-    transform: scale(1.1)
+    transform: scale(1.1);
 }
 
 .cookies-txt > p > i {
@@ -365,7 +370,7 @@ main {
     width: 75px;
 }
 
-.produto-compra{
+.produto-compra {
     background-size: cover;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -380,7 +385,7 @@ main {
     border-radius: 10px;
     max-width: 1000px;
     margin: 50px auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .miniaturas {
@@ -431,7 +436,7 @@ main {
     margin-bottom: 20px;
 }
 
-.desc>p{
+.desc > p {
     text-align: justify;
 }
 
@@ -444,8 +449,7 @@ main {
     border-radius: 5px;
     margin-top: 20px;
     cursor: pointer;
-    transition: transform .3s, box-shadow .3s;
-    
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .btn-pagar:hover {
@@ -453,17 +457,17 @@ main {
     box-shadow: 0 4px 8px var(--medlightblue);
 }
 
-.desc>ul>li{
+.desc > ul > li {
     color: black;
 }
 
-.desc ul{
+.desc ul {
     display: flex;
     flex-direction: column;
     width: 400px;
 }
 
-.inf-pag{
+.inf-pag {
     width: 300px;
     height: 600px;
     border: 1px solid #ccc;
@@ -475,7 +479,7 @@ main {
     padding: 15px;
 }
 
-.inf-pag h2{
+.inf-pag h2 {
     margin-top: 20px;
     margin-bottom: 20px;
 }

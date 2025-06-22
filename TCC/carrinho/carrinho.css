@@ -130,6 +130,11 @@ header {
     justify-content: space-between;
 }
 
+.nav-left #mi2 {
+    cursor: pointer;
+    margin-left: 20px;
+}
+
 .nav-left ul li #mi2::after {
     content: " ";
     width: 0px;
@@ -138,7 +143,7 @@ header {
     border-radius: 1px;
     position: absolute;
     top: 45px;
-    left: 238px;
+    left: 265px;
     transition: width 0.5s;
 }
 
@@ -158,7 +163,7 @@ header {
     border-radius: 1px;
     position: absolute;
     top: 45px;
-    left: 155px;
+    left: 164px;
     transition: width 0.5s;
 }
 
