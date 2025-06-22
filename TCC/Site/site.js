@@ -142,3 +142,11 @@ cepInput.addEventListener("blur", () => {
             });
     }
 });
+
+const btnFechar = document.getElementById("fechar");
+const formulario = document.querySelector(".formform");
+
+btnFechar.addEventListener("click", function (e) {
+    e.preventDefault();
+    formulario.reset();
+});
