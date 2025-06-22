@@ -2,11 +2,11 @@ var cart = document.getElementById("cart");
 var a = document.getElementById("acart");
 
 a.addEventListener("mouseenter", function () {
-    cart.classList.replace("bi-cart-fill", "bi-cart");
+    cart.classList.replace("bi-cart", "bi-cart-fill");
 });
 
 a.addEventListener("mouseleave", function () {
-    cart.classList.replace("bi-cart", "bi-cart-fill");
+    cart.classList.replace("bi-cart-fill", "bi-cart");
 });
 
 let lastScrollY = window.scrollY;
@@ -22,14 +22,8 @@ window.addEventListener("scroll", function () {
         header.classList.remove("hidden");
         subMenu.classList.remove("hidden2");
     }
-    lastScrollY = window.scrollY;
-});
 
-VanillaTilt.init(document.querySelectorAll(".produto"), {
-    max: 25,
-    speed: 400,
-    glare: true,
-    "max-glare": 0.1,
+    lastScrollY = window.scrollY;
 });
 
 var msgCookies = document.getElementById("cookies-msg");
@@ -45,10 +39,8 @@ if (localStorage.lgpd == "sim") {
     msgCookies.classList.add("mostrar");
 }
 
-const precos = document.querySelectorAll(".preco");
+function trocarImagem(elemento) {
+    const imagemPrincipal = document.getElementById("imagem-principal");
+    imagemPrincipal.src = elemento.src;
+}
 
-precos.forEach((span) => {
-    if (!span.textContent.includes("R$")) {
-        span.textContent = "R$ " + span.textContent;
-    }
-});

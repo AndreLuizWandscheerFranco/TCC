@@ -21,12 +21,18 @@
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     flex-direction: column;
+    transform-style: preserve-3d;
+    min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 #menu-logo {
@@ -60,7 +66,6 @@ li a {
 }
 
 header {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -73,7 +78,47 @@ header {
     flex-direction: row;
     justify-content: space-between;
     z-index: 10;
-    transition: all 0.3s ease;
+}
+
+#sub-menu {
+    width: 100%;
+    height: 40px;
+    background-color: #05276b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#sub-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+#sub-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+#sub-menu ul li a:hover {
+    background-color: var(--lightblue);
+    border-radius: 5px;
+}
+
+.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.6s ease;
+}
+
+.hidden2 {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
 }
 
 .nav-left {
@@ -83,6 +128,43 @@ header {
     flex-direction: row;
     justify-content: center;
     justify-content: space-between;
+}
+
+.nav-left #mi2 {
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.nav-left ul li #mi2::after {
+    content: " ";
+    width: 0px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 1px;
+    position: absolute;
+    top: 45px;
+    left: 265px;
+    transition: width 0.5s;
+}
+
+.nav-left ul li #mi2:hover::after {
+    width: 30px;
+}
+
+.nav-left ul li #mi:hover::after {
+    width: 30px;
+}
+
+.nav-left ul li #mi::after {
+    content: " ";
+    width: 0px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 1px;
+    position: absolute;
+    top: 45px;
+    left: 164px;
+    transition: width 0.5s;
 }
 
 .nav-right {
@@ -182,6 +264,7 @@ footer {
     background-color: var(--blue);
     width: 100%;
     color: white;
+    margin-top: 70px;
     padding: 40px 0;
 }
 
@@ -241,11 +324,108 @@ footer .linha2 {
     gap: 20px;
 }
 
+footer .linha2 p {
+    margin-top: 5px;
+}
+
 main {
     flex: 1;
-    padding-top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.tela {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    transform-style: preserve-3d;
 }
 
 header.hidden {
     transform: translateY(-100%);
+}
+
+.produto {
+    width: 240px;
+    height: 340px;
+    background-color: rgb(219, 219, 219);
+    border-radius: 12px;
+    margin: 40px;
+    box-shadow: 0 4px 8px rgb(22, 22, 22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform-style: preserve-3d;
+}
+
+.produto #nt {
+    width: 160px;
+    height: 110px;
+}
+
+.produto #aw {
+    width: 150px;
+    height: 140px;
+}
+
+.produto img {
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
+.produto:hover img {
+    transform: translate3d(0, 0, 100px);
+    transform-style: preserve-3d;
+}
+
+.cookies-msg {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #dbdbdb;
+    border-radius: 15px;
+    display: none;
+}
+
+.cookies-msg.mostrar {
+    display: block;
+}
+
+.cookies-msg .cookies-txt {
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+}
+
+.cookies-msg .cookies-btn {
+    margin-left: 30px;
+}
+
+.cookies-msg .cookies-btn button {
+    background-color: var(--blue);
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 40px;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+.cookies-msg .cookies-btn button:hover {
+    transform: scale(1.1);
+}
+
+.cookies-txt > p > i {
+    color: brown;
 }

@@ -41,7 +41,7 @@ const eventofocoout = ({ target }) => {
 
 const login_button = (event) => {
     event.preventDefault();
-    window.location = "../Site/site.html";
+    window.location = "../Site/index.html";
 };
 
 const eventoinserir = () => {

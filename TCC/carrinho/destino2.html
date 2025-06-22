@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="carrinho.css">
+    <link rel="stylesheet" href="destino2.css">
     <link rel="shortcut icon" href="../imagens/favicon-32x32.png" type="">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="carrinho.js"></script>
+    <script src="carrinho.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"
+        integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Document</title>
 </head>
 
@@ -17,13 +20,13 @@
 
         <div class="nav-left">
 
-            <a href="../Site/site.html">
+            <a href="../Site/index.html">
                 <h1 id="menu-logo">Auza</h1>
             </a>
 
             <ul>
-                <li><a href="#">Contato</a></li>
-                <li><a href="#">Ofertas</a></li>
+                <li><a id="mi" href="#">Contato</a></li>
+                <li><a id="mi2" onclick="abrirformcep()">CEP</a></li>
             </ul>
 
         </div>
@@ -51,9 +54,89 @@
 
     </header>
 
+    <nav id="sub-menu">
+        <ul>
+            <li><a href="#">Novidades</a></li>
+            <li><a href="#">Mais Vendidos</a></li>
+            <li><a href="#">Frete Grátis</a></li>
+            <li><a href="#">Cupons</a></li>
+        </ul>
+    </nav>
+
     <main>
 
+        <div class="titulo">
+
+            <h1>Carrinho</h1>
+            <button id="removert" type="button" onclick="remocetudo()">Remover todos os produtos do carrinho</button>
+
+        </div>
+
+        <div class="conteiner2">
+
+            <div class="pro-car">
+
+                <div class="part">
+
+                    <div class="img-p-car">
+                        <img src="../imagens/aw.png" alt="produto">
+                    </div>
+
+                    <div class="desc">
+                        <h3>Relogio Inteligente Smartwatch MICROWEAR S10 Pro + Serie 10 NFC Chatgpt Gps Original Masculino Feminino
+                            (Preto)</h3>
+
+                            <p style="color: green;">Em estoque</p>
+
+                            <p id="preco">R$ 30</p>
+                    </div>
+
+                </div>
+
+                <div class="part">
+
+                    <div class="img-p-car">
+                        <img src="../imagens/aw.png" alt="produto">
+                    </div>
+
+                    <div class="desc">
+                        <h3>Relogio Inteligente Smartwatch MICROWEAR S10 Pro + Serie 10 NFC Chatgpt Gps Original Masculino Feminino
+                            (Preto)</h3>
+
+                            <p style="color: green;">Em estoque</p>
+
+                            <p id="preco">R$ 30</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="pag-car">
+                <h2>Total(2 produtos): R$ 60,00</h2>
+                <button type="button" class="btn-pagar">Continuar para o pagamento</button>
+            </div>
+
+        </div>
+
+        <div class="bordinha">
+            <h2>Total(2 produtos): R$ 60,00</h2>
+        </div>
+
     </main>
+
+    <div class="cookies-msg" id="cookies-msg">
+        <div class="cookies-txt">
+            <p>Este site usa cookies <i class="bi bi-cookie"></i> e tecnologias afins, que são pequenos arquivos ou
+                pedaços de texto baixados para um
+                aparelho quando o visitante acessa um website ou aplicativo. Ao utilizar nosso site você está de acordo
+                com a utilização dos cookies para te proporcionar uma melhor experiência.</p>
+
+            <div class="cookies-btn">
+                <button onclick="aceito()">Aceito</button>
+            </div>
+        </div>
+    </div>
 
     <footer>
 
@@ -64,28 +147,27 @@
                 <div class="box">
                     <h3>Suporte</h3>
                     <div class="links">
-                        <a href="#">Devolução e reembolso</a>
-                        <a href="#">Fale conosco</a>
-                        <a href="#">Prazo e frete</a>
-                        <a href="#">Garantia</a>
+                        <a href="../Footers/devolucao.html">Devolução e reembolso</a>
+                        <a href="../Footers/prazo.html">Prazo e frete</a>
+                        <a href="../Footers/garantia.html">Garantia</a>
                     </div>
                 </div>
 
                 <div class="box">
                     <h3>Links úteis</h3>
                     <div class="links">
-                        <a href="#">Informações legais</a>
-                        <a href="#">Políticas</a>
-                        <a href="#">Sobre nós</a>
+                        <a href="../Footers/informacoes-legais.html">Informações legais</a>
+                        <a href="../Footers/politicas.html">Políticas</a>
+                        <a href="../Footers/sobre-nos.html">Sobre nós</a>
                     </div>
                 </div>
 
                 <div class="box">
                     <h3>Comunidade</h3>
                     <div class="links">
-                        <a href="#">Central de respostas</a>
-                        <a href="#">Fóruns de discussão</a>
-                        <a href="#">Notícias</a>
+                        <a href="../Footers/perguntas.html">Perguntas frequentes</a>
+                        <a href="../Footers/foruns.html">Fóruns de discussão</a>
+                        <a href="../Footers/noticias.html">Notícias</a>
                     </div>
                 </div>
 
@@ -94,10 +176,10 @@
                     <h3>Siga-nos</h3>
 
                     <div class="links redes">
-                        <a href="#"><i class="bi bi-github"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-tiktok"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a target="_blank" href="https://github.com/"><i class="bi bi-github"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                        <a target="_blank" href="https://www.tiktok.com/"><i class="bi bi-tiktok"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
                     </div>
                 </div>
 
