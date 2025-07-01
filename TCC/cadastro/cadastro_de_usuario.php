@@ -16,7 +16,7 @@
     echo("$senha");
  
     //Monta uma string com inserção 
-    $sql = "INSERT INTO usuario (nome, email, senha) VALUES ('$nome', '$email' , '$senha')";
+    $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email' , '$senha')";
     
     
     
