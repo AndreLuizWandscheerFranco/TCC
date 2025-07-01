@@ -1,6 +1,6 @@
 create database Banco_de_dados;
 
-use dados;
+use Banco_de_dados;
 
 create table usuario(
 id_usuario int AUTO_INCREMENT primary key,
@@ -14,7 +14,7 @@ numero varchar(5) not null,
 cidade varchar(37) not null,
 estado varchar(17) not null,
 email varchar(254) not null,
-senha varchar(8) not null,
+senha varchar(100) not null,
 tipo varchar(13) not null
 );
 
