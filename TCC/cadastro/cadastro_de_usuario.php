@@ -1,7 +1,7 @@
 <?php
     
     // Conexão
-    $conn = new mysqli("localhost", "root", "root", "exemplo");
+    $conn = new mysqli("localhost", "root", "root", "Banco_de_dados");
      if ($conn->connect_error) die("Erro: " . $conn->connect_error);
     
     
@@ -16,7 +16,7 @@
     echo("$senha");
  
     //Monta uma string com inserção 
-    $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email' , '$senha')";
+    $sql = "INSERT INTO usuario (nome, email, senha) VALUES ('$nome', '$email' , '$senha')";
     
     
     

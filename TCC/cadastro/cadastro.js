@@ -39,10 +39,10 @@ const eventofocoout = ({ target }) => {
     eventoinserir();
 };
 
-const login_button = (event) => {
-    event.preventDefault();
-    window.location = "../Site/index.html";
-};
+// const login_button = (event) => {
+//     event.preventDefault();
+//     window.location = "../Site/index.html";
+// };
 
 const eventoinserir = () => {
     const [nome, email, senha] = inputs;
