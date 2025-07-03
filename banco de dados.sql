@@ -2,7 +2,7 @@ create database Banco_de_dados;
 
 use Banco_de_dados;
 
-create table usuario(
+create table usuarios(
 id_usuario int AUTO_INCREMENT primary key,
 Nome varchar(104),
 cpf varchar(11),
