@@ -3,7 +3,7 @@ create database Banco_de_dados;
 use Banco_de_dados;
 
 create table usuarios(
-id_usuario int AUTO_INCREMENT primary key,
+id_usuarios int AUTO_INCREMENT primary key,
 Nome varchar(104),
 cpf varchar(11),
 telefone int(13),
@@ -22,9 +22,9 @@ create table pagamento(
 id_pagamento int auto_increment primary key,
 valor double not null,
 date Date not null,
-id_usuario int,
-foreign key(id_usuario)
-	references usuario(id_usuario)
+id_usuarios int,
+foreign key(id_usuarios)
+	references usuarios(id_usuarios)
 );
 
 create table produto(
