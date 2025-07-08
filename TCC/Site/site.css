@@ -604,7 +604,7 @@ main {
     justify-content: end;
     margin-top: 30px;
     gap: 90px;
-    width: 85%;
+    width: 92%;
 }
 
 .fechar {
@@ -652,13 +652,4 @@ main {
 
 body.bloqueia-scroll {
     overflow: hidden;
-}
-
-@media (max-width: 1366px) and (min-width: 768px) {
-  .form {
-    width: 60%;
-  }
-  .botoes{
-    width: 90%;
-  }
 }
