@@ -35,10 +35,6 @@ const eventofocoout = ({ target }) => {
     eventoinserir();
 };
 
-const login_button = (event) => {
-    window.location = "../Site/index.html";
-};
-
 const eventoinserir = () => {
     const [email, password] = inputs;
 
