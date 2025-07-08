@@ -35,8 +35,6 @@ const eventofocoout = ({ target }) => {
     eventoinserir();
 };
 
-
-
 const eventoinserir = () => {
     const [email, password] = inputs;
 
