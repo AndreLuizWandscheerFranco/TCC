@@ -6,7 +6,7 @@ create table usuarios(
 id_usuarios int AUTO_INCREMENT primary key,
 Nome varchar(104),
 cpf varchar(11),
-telefone int(13),
+telefone varchar(13),
 pais varchar(56),
 cep varchar(9),
 rua varchar(52),
