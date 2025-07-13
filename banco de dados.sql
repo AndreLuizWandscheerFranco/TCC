@@ -5,6 +5,7 @@ use Banco_de_dados;
 create table usuarios(
 id_usuarios int AUTO_INCREMENT primary key,
 Nome varchar(104),
+Nome_de_usuario varchar(104),
 cpf varchar(11),
 telefone varchar(13),
 pais varchar(56),
