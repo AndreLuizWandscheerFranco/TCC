@@ -4,11 +4,11 @@
      if ($conn->connect_error) die("Erro: " . $conn->connect_error);
     
     
-    $nome = $_POST["nome"];
+    $nome_de_usuario = $_POST["nome_de_usuario"];
     $email = $_POST["email"];
     $senha = $_POST["senha"];
     
-    echo("$nome");
+    echo("$nome_de_usuario");
     echo("$email");
     echo("$senha");
  
@@ -22,8 +22,8 @@
         exit(); 
     }
 
-    $inserir = $conn->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
-    $inserir->bind_param("sss", $nome, $email, $senha);
+    $inserir = $conn->prepare("INSERT INTO usuarios (nome_de_usuario, email, senha) VALUES (?, ?, ?)");
+    $inserir->bind_param("sss", $nome_de_usuario, $email, $senha);
 
     if ($inserir->execute()) {
         header("Location: ../Site/index.html");
