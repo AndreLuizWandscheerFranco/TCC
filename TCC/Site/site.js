@@ -121,7 +121,7 @@ function abrirformcep() {
 }
 
 const cepInput = document.querySelector('input[name="cep"]');
-const estadoCidadeInput = document.querySelector('input[name="estado-cidade"]');
+const estadoCidadeInput = document.querySelector('input[name="estado_cidade"]');
 
 cepInput.addEventListener("blur", () => {
     const cep = cepInput.value.replace(/\D/g, "");
