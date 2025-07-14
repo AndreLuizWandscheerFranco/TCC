@@ -30,13 +30,14 @@ foreign key(id_usuarios)
 	references usuarios(id_usuarios)
 );
 
-create table produto(
-nome varchar(100) not null,
-valor double not null,
-fabricante varchar(100) not null,
-descricao varchar(100) not null,
-avaliaçao double(5,0),
-id_pagamento int,
-	foreign key (id_pagamento)
-		references pagamento(id_pagamento)
+CREATE TABLE produto (
+    nome VARCHAR(100) NOT NULL,
+    valor DOUBLE NOT NULL,
+    fabricante VARCHAR(100) NOT NULL,
+    descricao VARCHAR(100) NOT NULL,
+    avaliacao DOUBLE(5,0),
+    imagem LONGBLOB,
+    id_pagamento INT,
+    FOREIGN KEY (id_pagamento) REFERENCES pagamento(id_pagamento)
 );
+
