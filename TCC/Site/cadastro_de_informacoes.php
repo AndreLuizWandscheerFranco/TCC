@@ -1,6 +1,15 @@
 <?php
+session_start(); // para acessar $_SESSION
+
 $conn = new mysqli("localhost", "root", "root", "Banco_de_dados");
 if ($conn->connect_error) die("Erro: " . $conn->connect_error);
+
+// Verifique se o usuário está logado
+if (!isset($_SESSION['usuario']['id_usuarios'])) {
+    die("Usuário não está logado.");
+}
+
+$id_usuario = $_SESSION['usuario']['id_usuarios'];
 
 $nomecompleto = $_POST["nomecompleto"] ?? '';
 $numerofone = $_POST["numerofone"] ?? '';
@@ -18,23 +27,15 @@ if (strpos($estado_cidade, ' - ') !== false) {
     $cidade = '';
 }
 
-$verifica = $conn->prepare("SELECT id_usuarios FROM usuarios WHERE nome = ? AND telefone = ? AND cep = ? AND estado = ? AND cidade = ? AND bairro = ? AND rua = ? AND numero = ? AND complemento = ?");
-$verifica->bind_param('sssssssss', $nomecompleto, $numerofone, $cep, $estado, $cidade, $bairro, $rua, $numero, $complemento);
-$verifica->execute();
-$resultado = $verifica->get_result();
+// Atualiza os dados do usuário logado
+$atualizar = $conn->prepare("UPDATE usuarios SET nome = ?, telefone = ?, cep = ?, estado = ?, cidade = ?, bairro = ?, rua = ?, numero = ?, complemento = ? WHERE id_usuarios = ?");
+$atualizar->bind_param("sssssssssi", $nomecompleto, $numerofone, $cep, $estado, $cidade, $bairro, $rua, $numero, $complemento, $id_usuario);
 
-if ($resultado && $resultado->num_rows > 0) {
-    echo "Endereço já cadastrado!";
-    exit();
-}
-
-$inserir = $conn->prepare("INSERT INTO usuarios (nome, telefone, cep, estado, cidade, bairro, rua, numero, complemento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$inserir->bind_param("sssssssss", $nomecompleto, $numerofone, $cep, $estado, $cidade, $bairro, $rua, $numero, $complemento);
-
-if ($inserir->execute()) {
+if ($atualizar->execute()) {
+    echo "Dados atualizados com sucesso!";
     header("Location: ../compra/index.html");
     exit();
 } else {
-    echo "Erro ao cadastrar: " . $conn->error;
+    echo "Erro ao atualizar: " . $conn->error;
 }
 ?>
