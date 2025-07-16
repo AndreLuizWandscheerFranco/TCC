@@ -254,6 +254,15 @@ a:hover {
     padding-left: 2px;
 }
 
+.erro_input_cpf {
+    display: none;
+    color: red;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 15px;
+    padding-left: 2px;
+}
+
 .login_button:hover:not(:disabled) {
     background-color: var(--lightblue);
     transform: scale(1.05);

@@ -6,7 +6,7 @@ create table usuarios(
 id_usuarios int AUTO_INCREMENT primary key,
 Nome varchar(104),
 Nome_de_usuario varchar(104),
-cpf varchar(11),
+cpf varchar(14),
 telefone varchar(13),
 cep varchar(9),
 rua varchar(52),
@@ -17,7 +17,7 @@ cidade varchar(37),
 estado varchar(17),
 email varchar(254),
 senha varchar(100),
-tipo varchar(13)
+tipo varchar(13) default 'usuário'
 );
 
 create table pagamento(

@@ -47,7 +47,9 @@
         <div class="nav-right">
 
             <ul>
-                <li><a href="../Login/login.html">Login <i class="bi bi-person-fill"></i></a></li>
+                <li id="login-area">
+                    <a href="../Login/login.html" id="login-link">Login <i class="bi bi-person-fill"></i></a>
+                </li>
             </ul>
 
             <a href="../carrinho/carrinho.html" id="acart"><i class="bi bi-cart" id="cart"></i></a>
@@ -325,7 +327,8 @@
 
                     <input type="text" name="nomecompleto" class="cepinput" placeholder="Nome completo" required>
 
-                    <input type="text" name="numerofone" maxlength="13" class="cepinput" placeholder="Número de telefone" required>
+                    <input type="text" name="numerofone" maxlength="13" class="cepinput"
+                        placeholder="Número de telefone" required>
 
                     <input type="text" name="cep" class="cepinput" placeholder="CEP" required>
 
@@ -351,6 +354,20 @@
             </form>
         </div>
     </div>
+
+    <script>
+        fetch('../Login/pegar_nome.php')
+            .then(response => response.json())
+            .then(data => {
+                if (data.nome) {
+                    const loginArea = document.getElementById("login-area");
+                    loginArea.innerHTML = `
+        <a href="../perfil/perfil.php">
+          ${data.nome} <i class="bi bi-person-fill"></i>
+        </a>`;
+                }
+            });
+    </script>
 
 </body>
 

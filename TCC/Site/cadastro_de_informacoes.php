@@ -1,10 +1,9 @@
 <?php
-session_start(); // para acessar $_SESSION
+session_start(); 
 
 $conn = new mysqli("localhost", "root", "root", "Banco_de_dados");
 if ($conn->connect_error) die("Erro: " . $conn->connect_error);
 
-// Verifique se o usuário está logado
 if (!isset($_SESSION['usuario']['id_usuarios'])) {
     die("Usuário não está logado.");
 }
@@ -27,7 +26,6 @@ if (strpos($estado_cidade, ' - ') !== false) {
     $cidade = '';
 }
 
-// Atualiza os dados do usuário logado
 $atualizar = $conn->prepare("UPDATE usuarios SET nome = ?, telefone = ?, cep = ?, estado = ?, cidade = ?, bairro = ?, rua = ?, numero = ?, complemento = ? WHERE id_usuarios = ?");
 $atualizar->bind_param("sssssssssi", $nomecompleto, $numerofone, $cep, $estado, $cidade, $bairro, $rua, $numero, $complemento, $id_usuario);
 
