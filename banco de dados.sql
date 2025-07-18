@@ -17,7 +17,7 @@ cidade varchar(37),
 estado varchar(17),
 email varchar(254),
 senha varchar(100),
-tipo varchar(13) default 'usuário'
+tipo varchar(13) default 'cliente'
 );
 
 create table pagamento(

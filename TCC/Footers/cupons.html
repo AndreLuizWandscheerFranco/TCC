@@ -1,74 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../imagens/favicon-32x32.png" type="image/x-icon">
-    <title>Cupons</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../imagens/favicon-32x32.png" type="image/x-icon">
+  <title>Cupons</title>
 </head>
+
 <body>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap");
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Lexend Deca", sans-serif; }
-        :root {
-          --blue: #021130;
-          --medlightblue: #1c4588;
-          --lightblue: #3c81c6;
-          --white: #ffff;
-          --light-gray: #ececec;
-          --deep-gray: #343434;
-          --medium-gray: #a7a7a7;
-          --whitesmoke: whitesmoke;
-          --black: #000000;
-          --gray: #c4c4c4;
-        }
-        body { background-color: #ffffff; color: #000000; }
-        header { background-color: var(--blue); color: #ffffff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        header h1 { margin: 0; }
-        header h2 {margin-bottom:  20 px;}
-        main { padding: 2rem; }
-        footer { background-color: #f1f1f1; text-align: center; padding: 1rem; color: #333; font-size: 0.9rem; }
-        h2{margin-bottom: 20px;}
-        p{text-align: justify;}
-      </style>
-    </head>
-    <body>
-      <header>
-        <h1>AUZA</h1>
-        <nav>
-          <a href="../Site/index.html" style="color:white; margin-left: 1rem; text-decoration: none;">Início</a>
-        </nav>
-      </header>
-    
-      <main>
-        <h2>Sobre os nossos cupons</h2>
-        <p> Aproveite Cupons Exclusivos no Seu Site Favorito de Eletrônicos! 🔌💻
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap");
 
-            Está procurando os melhores descontos em eletrônicos? Então você está no lugar certo! No nosso site, além de encontrar os lançamentos mais recentes<br> em smartphones, notebooks, acessórios e gadgets, você ainda pode economizar muito com nossos cupons de desconto especiais 🤑.<br>
-            
-            <br>Como funciona? É simples! Navegue pelo site, escolha os produtos que deseja e, na hora de finalizar a compra, aplique o cupom disponível para ganhar descontos instantâneos. Temos cupons que oferecem descontos progressivos, frete grátis e até brindes exclusivos!<br>
-            
-            <br>Fique de olho nas promoções:
-            
-            Cupons semanais com até 30% OFF em produtos selecionados;
-            
-            Descontos especiais para a primeira compra;
-            
-            Ofertas relâmpago com cupons válidos por tempo limitado!
-            
-            💡 Dica: Assine nossa newsletter ou ative as notificações para receber os cupons antes de todo mundo.
-            
-            Não perca tempo e garanta já seus eletrônicos com o melhor preço da internet. Tecnologia de ponta e economia? Aqui tem!
-            
-            </p>
-      </main>
-    
-      <footer>
-        &copy; 2025 AUZA. Todos os direitos reservados.
-      </footer>
-    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Lexend Deca", sans-serif;
+    }
+
+    :root {
+      --blue: #021130;
+      --medlightblue: #1c4588;
+      --lightblue: #3c81c6;
+      --white: #ffff;
+      --light-gray: #ececec;
+      --deep-gray: #343434;
+      --medium-gray: #a7a7a7;
+      --whitesmoke: whitesmoke;
+      --black: #000000;
+      --gray: #c4c4c4;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    header {
+      background-color: var(--blue);
+      color: #ffffff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    header h2 {
+      margin-bottom: 20 px;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 1rem;
+      color: #333;
+      font-size: 0.9rem;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: justify;
+    }
+  </style>
+  </head>
+
+  <body>
+   <header>
+      <h1>AUZA</h1>
+      <nav>
+        <a id="link-inicio" href="../Site/index.html"
+          style="color:white; margin-left: 1rem; text-decoration: none;">Início</a>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Sobre os nossos cupons</h2>
+      <p> Aproveite Cupons Exclusivos no Seu Site Favorito de Eletrônicos! 🔌💻
+
+        Está procurando os melhores descontos em eletrônicos? Então você está no lugar certo! No nosso site, além de
+        encontrar os lançamentos mais recentes<br> em smartphones, notebooks, acessórios e gadgets, você ainda pode
+        economizar muito com nossos cupons de desconto especiais 🤑.<br>
+
+        <br>Como funciona? É simples! Navegue pelo site, escolha os produtos que deseja e, na hora de finalizar a
+        compra, aplique o cupom disponível para ganhar descontos instantâneos. Temos cupons que oferecem descontos
+        progressivos, frete grátis e até brindes exclusivos!<br>
+
+        <br>Fique de olho nas promoções:
+
+        Cupons semanais com até 30% OFF em produtos selecionados;
+
+        Descontos especiais para a primeira compra;
+
+        Ofertas relâmpago com cupons válidos por tempo limitado!
+
+        💡 Dica: Assine nossa newsletter ou ative as notificações para receber os cupons antes de todo mundo.
+
+        Não perca tempo e garanta já seus eletrônicos com o melhor preço da internet. Tecnologia de ponta e economia?
+        Aqui tem!
+
+      </p>
+    </main>
+
+    <footer>
+      &copy; 2025 AUZA. Todos os direitos reservados.
+    </footer>
 
 
+      <script src="../Login/usuarioHeader.js"></script>
 
-</body>
+  </body>
+
 </html>

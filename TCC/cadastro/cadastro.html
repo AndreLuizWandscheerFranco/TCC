@@ -14,13 +14,9 @@
 <body>
     <main>
         <section class="login">
-
             <div class="pacote">
-
                 <h1 class="login_logo">AUZA</h1>
-
                 <form class="login_form" method="post" action="cadastro_de_usuario.php">
-
                     <h1 class="login_title">Criar conta</h1>
 
                     <label class="login_label">
@@ -33,14 +29,12 @@
                         <input type="text" name="cpf" class="input" id="cpf" maxlength="14" required />
                     </label>
                     <label class="message"><span class="erro_input_cpf">CPF inválido</span></label>
-
                     <label class="message"><span class="erro_input_nome">Qual é o seu nome?</span></label>
 
                     <label class="login_label">
                         <span>Email</span>
                         <input type="email" name="email" class="input" required />
                     </label>
-
                     <label class="message"><span class="erro_input">Endereço de e-mail inválido</span></label>
 
                     <label class="login_label">
@@ -48,9 +42,11 @@
                         <input type="password" maxlength="20" name="senha" class="input" id="pass" required />
                         <i class="bi bi-eye" id="btn-senha" onclick="mostrarsenha()"></i>
                     </label>
-
                     <label class="message"><span class="erro_input_senha">A senha deve ter no mínimo 8 dígitos e conter
                             apenas letras e números.</span></label>
+
+                    <button type="button" id="mostrarAdmin" class="admin-toggle">Cadastrar como administrador</button>
+                    <input type="hidden" name="tipo" id="tipoUsuario" value="cliente">
 
                     <button type="submit" class="login_button" disabled>
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="920.000000pt" height="512.000000pt"
@@ -68,15 +64,10 @@
                             </g>
                         </svg>
                     </button>
-
                 </form>
-
             </div>
-
             <div class="pacote">
-
                 <a href="../Login/login.html" class="login_link">Já tem uma conta? <br> Fazer login</a>
-
             </div>
         </section>
     </main>

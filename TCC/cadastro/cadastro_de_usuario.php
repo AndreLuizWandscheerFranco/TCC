@@ -1,39 +1,38 @@
 <?php
-session_start(); 
+session_start();
+
 $conn = new mysqli("localhost", "root", "root", "Banco_de_dados");
-if ($conn->connect_error) die("Erro: " . $conn->connect_error);
+if ($conn->connect_error) {
+    die("Erro: " . $conn->connect_error);
+}
 
 $nome_de_usuario = $_POST["nome_de_usuario"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
-$cpf = $_POST["cpf"];
+$tipo = $_POST["tipo"];
 
-$verifica = $conn->prepare("SELECT id_usuarios FROM usuarios WHERE email = ?");
-$verifica->bind_param("s", $email);
-$verifica->execute();
-$resultado = $verifica->get_result();
+$sql = "INSERT INTO usuarios (Nome_de_usuario, email, senha, tipo) VALUES (?, ?, ?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ssss", $nome_de_usuario, $email, $senha, $tipo);
 
-if ($resultado->num_rows > 0) {
-    echo "Este e-mail já está cadastrado.";
-    exit(); 
-}
+if ($stmt->execute()) {
+    $id_usuarios = $conn->insert_id;
 
-$inserir = $conn->prepare("INSERT INTO usuarios (nome_de_usuario, email, senha, cpf) VALUES (?, ?, ?, ?)");
-$inserir->bind_param("ssss", $nome_de_usuario, $email, $senha, $cpf);
+    $_SESSION['usuario'] = [
+        'id_usuarios' => $id_usuarios,
+        'nome_de_usuario' => $nome_de_usuario,
+        'email' => $email,
+        'tipo' => $tipo
+    ];
 
-if ($inserir->execute()) {
-
-    $id_usuario = $conn->insert_id;
-
-    $_SESSION['usuario'] = ['id_usuarios' => $id_usuario];
-
-    header("Location: ../Site/index.html");
-    exit();
+    if ($tipo == 'admin') {
+        header("Location: ../Administrador/index.html");
+    } else {
+        header("Location: ../Site/index.html");
+    }
+    exit;
 } else {
-    echo "Erro: " . $conn->error;
+    echo "Erro no cadastro: " . $stmt->error;
 }
-
-$verifica->close(); 
-$inserir->close();
-$conn->close();
 ?>
+

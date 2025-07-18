@@ -175,3 +175,19 @@ inputCPF.addEventListener("input", () => {
 inputs.forEach((input) => input.addEventListener("input", eventoInput));
 inputs.forEach((input) => input.addEventListener("focus", eventofoco));
 inputs.forEach((input) => input.addEventListener("focusout", eventofocoout));
+
+const botaoAdmin = document.getElementById("mostrarAdmin");
+const campoTipo = document.getElementById("tipoUsuario");
+
+botaoAdmin.addEventListener("click", () => {
+    const ativado = campoTipo.value === "admin";
+    if (ativado) {
+        campoTipo.value = "cliente";
+        botaoAdmin.textContent = "Cadastrar como administrador";
+        botaoAdmin.classList.remove("ativo");
+    } else {
+        campoTipo.value = "admin";
+        botaoAdmin.textContent = "Modo administrador ativado";
+        botaoAdmin.classList.add("ativo");
+    }
+});

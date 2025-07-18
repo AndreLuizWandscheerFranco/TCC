@@ -311,3 +311,20 @@ input:-webkit-autofill {
         height: auto;
     }
 }
+
+.admin-toggle {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: var(--lightblue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.admin-toggle.ativo {
+    background-color: var(--deep-gray);
+    color: white;
+}
