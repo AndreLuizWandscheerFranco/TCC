@@ -39,10 +39,6 @@ if (localStorage.lgpd == "sim") {
     msgCookies.classList.add("mostrar");
 }
 
-function trocarImagem(elemento) {
-    const imagemPrincipal = document.getElementById("imagem-principal");
-    imagemPrincipal.src = elemento.src;
-}
 
 function abrirformcep() {
     const janela = document.getElementById("cepform");

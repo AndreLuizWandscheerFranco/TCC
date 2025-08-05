@@ -128,7 +128,7 @@ header {
 }
 
 .nav-left {
-    width: 300px;
+    width: 400px;
     padding: 10px;
     display: flex;
     flex-direction: row;
@@ -149,7 +149,7 @@ header {
     border-radius: 1px;
     position: absolute;
     top: 45px;
-    left: 265px;
+    left: 365px;
     transition: width 0.5s;
 }
 
@@ -169,18 +169,26 @@ header {
     border-radius: 1px;
     position: absolute;
     top: 45px;
-    left: 164px;
+    left: 243px;
     transition: width 0.5s;
 }
 
+.nav-left ul #mi{
+    margin-right: 20px;
+}
+
 .nav-right {
-    width: 300px;
+    width: 400px;
     display: flex;
     padding: 10px;
     align-items: center;
     justify-content: center;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.nav-right ul #login-area{
+    margin-right: 30px;
 }
 
 .nav-right i {

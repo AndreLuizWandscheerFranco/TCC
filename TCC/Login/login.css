@@ -171,10 +171,10 @@ a:hover {
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     box-shadow: 0px 10px 40px -12px var(--blue);
     transition: all 0.3s ease;
-    margin-top: 150px;
+    margin-top: 160px;
 }
 
 .login_button svg g {
