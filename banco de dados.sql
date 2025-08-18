@@ -30,12 +30,13 @@ foreign key(id_usuarios)
 );
 
 CREATE TABLE produto (
+	id int auto_increment primary key,
     nome VARCHAR(100) NOT NULL,
     valor DOUBLE NOT NULL,
     fabricante VARCHAR(100) NOT NULL,
     descricao VARCHAR(100) NOT NULL,
     avaliacao DOUBLE(5,0),
-    imagem LONGBLOB,
+    imagem varchar(255),
     id_pagamento INT,
     FOREIGN KEY (id_pagamento) REFERENCES pagamento(id_pagamento)
 );

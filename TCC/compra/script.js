@@ -83,3 +83,4 @@ btnFechar.addEventListener("click", function (e) {
     e.preventDefault();
     formulario.reset();
 });
+

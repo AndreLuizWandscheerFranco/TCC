@@ -51,7 +51,7 @@
                 </li>
             </ul>
 
-            <a href="carrinho.html" id="acart"><i class="bi bi-cart" id="cart"></i></a>
+            <a href="destino2.html" id="acart"><i class="bi bi-cart" id="cart"></i></a>
         </div>
 
     </header>
@@ -70,7 +70,7 @@
         <div class="titulo">
 
             <h1>Carrinho</h1>
-            <button id="removert" type="button" onclick="remocetudo()">Remover todos os produtos do carrinho</button>
+            <button id="removert" type="button" onclick="removetudo()">Remover todos os produtos do carrinho</button>
 
         </div>
 
@@ -78,53 +78,19 @@
 
             <div class="pro-car">
 
-                <div class="part">
-
-                    <div class="img-p-car">
-                        <img src="../imagens/aw.png" alt="produto">
-                    </div>
-
-                    <div class="desc">
-                        <h3>Relogio Inteligente Smartwatch MICROWEAR S10 Pro + Serie 10 NFC Chatgpt Gps Original
-                            Masculino Feminino
-                            (Preto)</h3>
-
-                        <p style="color: green;">Em estoque</p>
-
-                        <p id="preco">R$ 30</p>
-                    </div>
-
-                </div>
-
-                <div class="part">
-
-                    <div class="img-p-car">
-                        <img src="../imagens/aw.png" alt="produto">
-                    </div>
-
-                    <div class="desc">
-                        <h3>Relogio Inteligente Smartwatch MICROWEAR S10 Pro + Serie 10 NFC Chatgpt Gps Original
-                            Masculino Feminino
-                            (Preto)</h3>
-
-                        <p style="color: green;">Em estoque</p>
-
-                        <p id="preco">R$ 30</p>
-                    </div>
-
-                </div>
+                <div id="carrinho-container"></div>
 
             </div>
 
             <div class="pag-car">
-                <h2>Total(2 produtos): R$ 60,00</h2>
+                <h2 style="font-size: 20px;" id="total-pag">Total: R$ 0,00</h2>
                 <button type="button" class="btn-pagar">Continuar para o pagamento</button>
             </div>
 
         </div>
 
         <div class="bordinha">
-            <h2>Total(2 produtos): R$ 60,00</h2>
+            <h2 id="total"></h2>
         </div>
 
     </main>

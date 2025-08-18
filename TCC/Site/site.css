@@ -349,6 +349,7 @@ main {
     padding: 10px;
     flex-direction: column;
     transform-style: preserve-3d;
+    margin-top: 10px;
 }
 
 .produto h1 {
@@ -367,7 +368,7 @@ main {
     flex-grow: 1;
 }
 
-.produto:hover img {
+.produto:hover {
     transform: translate3d(0, 0, 100px);
     transform-style: preserve-3d;
 }
@@ -429,6 +430,7 @@ main {
     justify-content: center;
     flex-direction: row;
     transform-style: preserve-3d;
+    margin-top: 10px;
 }
 
 .slider {
@@ -655,10 +657,10 @@ body.bloqueia-scroll {
 }
 
 @media (max-width: 1366px) and (min-width: 768px) {
-  .form {
-    width: 60%;
-  }
-  .botoes{
-    width: 90%;
-  }
+    .form {
+        width: 60%;
+    }
+    .botoes {
+        width: 90%;
+    }
 }

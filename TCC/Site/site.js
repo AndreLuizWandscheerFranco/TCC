@@ -99,14 +99,6 @@ function administrador() {
     adm.style.display = "block";
 }
 
-const precos = document.querySelectorAll(".preco");
-
-precos.forEach((span) => {
-    if (!span.textContent.includes("R$")) {
-        span.textContent = "R$ " + span.textContent;
-    }
-});
-
 function abrirformcep() {
     const janela = document.getElementById("cepform");
     janela.classList.add("abrirformcep");
@@ -150,3 +142,89 @@ btnFechar.addEventListener("click", function (e) {
     e.preventDefault();
     formulario.reset();
 });
+
+function adicionar(elemento) {
+    const produto = elemento.closest(".produto");
+
+    const nome = produto.querySelector("h1").innerText;
+    const preco = produto.querySelector(".preco").innerText;
+    const img = produto.querySelector("img").getAttribute("src");
+    const descricao = produto.querySelector(".descricao").innerText;
+
+    const item = {
+        nome: nome,
+        preco: preco,
+        img: img,
+        descricao: descricao,
+        quantidade: 1,
+    };
+
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    let existente = carrinho.find((i) => i.nome === item.nome);
+
+    if (existente) {
+        existente.quantidade += 1;
+    } else {
+        carrinho.push(item);
+    }
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+    window.location.href = "../carrinho/destino2.html";
+}
+
+fetch("./produtos.php")
+    .then((response) => response.json())
+    .then((produtos) => {
+        const container = document.getElementById("produtos-container");
+        container.innerHTML = "";
+
+        produtos.forEach((produto) => {
+            const avaliacao = Math.round(produto.avaliacao);
+            let estrelas = "";
+            for (let i = 0; i < 5; i++) {
+                estrelas +=
+                    i < avaliacao
+                        ? '<i class="bi bi-star-fill"></i>'
+                        : '<i class="bi bi-star"></i>';
+            }
+
+            container.innerHTML += `
+                <div class="produto">
+                    <h1>${produto.nome}</h1>
+                    <img class="teste" src="../imagens_produtos/${produto.imagem}" alt="img">
+                    <div class="infos">
+                        <p>${estrelas}</p>
+                        <p class="descricao">${produto.descricao}</p>
+                        <span class="preco">R$${produto.valor}</span>
+                    </div>
+                    <div class="btn-info-compra">
+                        <span class="add-cart" onclick="adicionar(this)">
+                            <i class="bi bi-cart"></i>
+                        </span>
+                    <button class="btn-compra" type="button">
+                        <a href="../compra/index.html?id=${produto.id}">Comprar</a>
+                    </button>
+                    </div>
+                </div>
+            `;
+        });
+    });
+
+function comprarProduto(id) {
+    fetch("./produtos.php")
+        .then((response) => response.json())
+        .then((produtos) => {
+            const produto = produtos.find((p) => p.id == id);
+            if (produto) {
+                localStorage.setItem(
+                    "produtoSelecionado",
+                    JSON.stringify(produto)
+                );
+                window.location.href = "../compra/index.html";
+            } else {
+                alert("Produto não encontrado.");
+            }
+        });
+}
