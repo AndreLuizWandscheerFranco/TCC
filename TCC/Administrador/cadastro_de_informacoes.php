@@ -31,7 +31,7 @@ $atualizar->bind_param("sssssssssi", $nomecompleto, $numerofone, $cep, $estado, 
 
 if ($atualizar->execute()) {
     echo "Dados atualizados com sucesso!";
-    header("Location: ../compra/index.html");
+    header("Location: ../Site/index.html");
     exit();
 } else {
     echo "Erro ao atualizar: " . $conn->error;
