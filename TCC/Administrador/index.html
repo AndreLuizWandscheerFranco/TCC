@@ -26,7 +26,7 @@
             </a>
 
             <ul>
-                <li><a id="mi" href="../Footers/contato.html">Contato</a></li>
+                <li><a id="mi" href="#">Contato</a></li>
                 <li><a id="mi2" onclick="abrirformcep()">CEP</a></li>
             </ul>
 
@@ -48,7 +48,11 @@
 
             <ul>
                 <li id="login-area">
-                    <a href="../Login/login.html" id="login-link">Login <i class="bi bi-person-fill"></i></a>
+                    <a href="../Login/login.html">Login <i class="bi bi-person-fill"></i></a>
+                </li>
+
+                <li>
+                    <a href="cadastro_de_produtos.html">Cadastrar produtos</a>
                 </li>
             </ul>
 
@@ -82,6 +86,7 @@
         <button class="nav next"><i class="bi bi-caret-right"></i></button>
 
     </div>
+
 
     <main>
 
@@ -200,23 +205,10 @@
         </div>
     </div>
 
-    <script>
-        fetch('../Login/pegar_nome.php')
-            .then(response => response.json())
-            .then(data => {
-                if (data.nome) {
-                    const loginArea = document.getElementById("login-area");
-                    loginArea.innerHTML = `
-        <a href="../perfil/perfil.php">
-          ${data.nome} <i class="bi bi-person-fill"></i>
-        </a>`;
-                }
-            });
-    </script>
-
+    <script src="../Login/usuarioHeader.js"></script>
 
     <script>
-        fetch('./verifica_login.php')
+        fetch('../Site/verifica_login.php')
             .then(res => res.json())
             .then(data => {
                 if (data.logado) {

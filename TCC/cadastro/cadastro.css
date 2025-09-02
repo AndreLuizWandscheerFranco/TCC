@@ -171,10 +171,10 @@ a:hover {
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     box-shadow: 0px 10px 40px -12px var(--blue);
     transition: all 0.3s ease;
-    margin-top: 160px;
+    margin-top: 90px;
 }
 
 .login_button svg g {
@@ -254,6 +254,15 @@ a:hover {
     padding-left: 2px;
 }
 
+.erro_input_cpf {
+    display: none;
+    color: red;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 15px;
+    padding-left: 2px;
+}
+
 .login_button:hover:not(:disabled) {
     background-color: var(--lightblue);
     transform: scale(1.05);
@@ -301,4 +310,20 @@ input:-webkit-autofill {
     body {
         height: auto;
     }
+}
+
+.admin-toggle {
+    padding: 10px 20px;
+    background-color: var(--lightblue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.admin-toggle.ativo {
+    background-color: var(--deep-gray);
+    color: white;
 }

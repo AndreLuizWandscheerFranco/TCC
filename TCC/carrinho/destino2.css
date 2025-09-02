@@ -649,12 +649,14 @@ main {
 .pag-car {
     background-color: var(--light-gray);
     width: 300px;
-    height: 150px;
+    height: 10%;
     border-radius: 8px;
     font-size: 12px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
 }
 
 .pag-car h2 {
@@ -667,7 +669,7 @@ main {
     padding: 8px;
     border-radius: 4px;
     color: white;
-    margin-top: 20px;
+    margin-top: 30px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -796,4 +798,38 @@ main {
 
 body.bloqueia-scroll {
     overflow: hidden;
+}
+
+#rmvcar {
+    border: none;
+    cursor: pointer;
+    background-color: #f20744;
+    width: 25px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+#rmvcar i {
+    font-size: 17px;
+    color: white;
+    font-weight: 100;
+}
+
+.btnsprod {
+    background-color: #1c4588;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 20px;
+    height: 25px;
+}
+
+.contador {
+    margin-top: 10px;
+}
+
+.contador span {
+    font-size: 17px;
 }

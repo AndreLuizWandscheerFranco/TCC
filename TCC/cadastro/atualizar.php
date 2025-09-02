@@ -11,7 +11,7 @@ $email = $_POST["email"];
 $senha = $_POST["senha"];
 $tipo = $_POST["tipo"];
 
-$sql = "INSERT INTO usuarios (Nome_de_usuario, email, senha, tipo) VALUES (?, ?, ?, ?)";
+$sql = "UPDATE usuarios (Nome_de_usuario, email, senha, tipo) VALUES (?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssss", $nome_de_usuario, $email, $senha, $tipo);
 
@@ -25,14 +25,16 @@ if ($stmt->execute()) {
         'tipo' => $tipo
     ];
 
+    
+
     if ($tipo == 'admin') {
         header("Location: ../Administrador/index.html");
+        
     } else {
         header("Location: ../Site/index.html");
     }
     exit;
 } else {
-    echo "Erro no cadastro: " . $stmt->error;
+    echo "Erro ao atualizar: " . $stmt->error;
 }
 ?>
-

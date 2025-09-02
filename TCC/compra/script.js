@@ -39,8 +39,48 @@ if (localStorage.lgpd == "sim") {
     msgCookies.classList.add("mostrar");
 }
 
-function trocarImagem(elemento) {
-    const imagemPrincipal = document.getElementById("imagem-principal");
-    imagemPrincipal.src = elemento.src;
+
+function abrirformcep() {
+    const janela = document.getElementById("cepform");
+    janela.classList.add("abrirformcep");
+    document.body.classList.add("bloqueia-scroll");
+
+    janela.addEventListener("click", (e) => {
+        if (e.target.id == "fechar") {
+            janela.classList.remove("abrirformcep");
+            document.body.classList.remove("bloqueia-scroll");
+        }
+    });
 }
+
+const cepInput = document.querySelector('input[name="cep"]');
+const estadoCidadeInput = document.querySelector('input[name="estado-cidade"]');
+
+cepInput.addEventListener("blur", () => {
+    const cep = cepInput.value.replace(/\D/g, "");
+
+    if (cep.length === 8) {
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then((response) => response.json())
+            .then((data) => {
+                if (!data.erro) {
+                    estadoCidadeInput.value = `${data.uf} - ${data.localidade}`;
+                } else {
+                    alert("CEP não encontrado!");
+                    estadoCidadeInput.value = "";
+                }
+            })
+            .catch(() => {
+                alert("Erro ao buscar o CEP!");
+            });
+    }
+});
+
+const btnFechar = document.getElementById("fechar");
+const formulario = document.querySelector(".formform");
+
+btnFechar.addEventListener("click", function (e) {
+    e.preventDefault();
+    formulario.reset();
+});
 

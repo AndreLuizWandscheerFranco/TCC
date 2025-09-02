@@ -99,6 +99,14 @@ function administrador() {
     adm.style.display = "block";
 }
 
+const precos = document.querySelectorAll(".preco");
+
+precos.forEach((span) => {
+    if (!span.textContent.includes("R$")) {
+        span.textContent = "R$ " + span.textContent;
+    }
+});
+
 function abrirformcep() {
     const janela = document.getElementById("cepform");
     janela.classList.add("abrirformcep");
@@ -174,7 +182,7 @@ function adicionar(elemento) {
     window.location.href = "../carrinho/destino2.html";
 }
 
-fetch("./produtos.php")
+fetch("../Site/produtos.php")
     .then((response) => response.json())
     .then((produtos) => {
         const container = document.getElementById("produtos-container");
@@ -213,7 +221,7 @@ fetch("./produtos.php")
     });
 
 function comprarProduto(id) {
-    fetch("./produtos.php")
+    fetch("../Site/produtos.php")
         .then((response) => response.json())
         .then((produtos) => {
             const produto = produtos.find((p) => p.id == id);

@@ -3,6 +3,8 @@ const button = document.querySelector(".login_button");
 const erro_input = document.querySelector(".erro_input");
 const erro_input_senha = document.querySelector(".erro_input_senha");
 const erro_input_nome = document.querySelector(".erro_input_nome");
+const erro_input_cpf = document.querySelector(".erro_input_cpf");
+const inputCPF = document.getElementById("cpf");
 
 let timeoutId;
 
@@ -12,6 +14,8 @@ const limpar_inputs = () => {
         input.classList.remove("valido", "invalido");
         erro_input.style.display = "none";
         erro_input_senha.style.display = "none";
+        erro_input_nome.style.display = "none";
+        erro_input_cpf.style.display = "none";
     });
     button.setAttribute("disabled", "");
 };
@@ -22,6 +26,7 @@ const digitado = {
     nome: false,
     email: false,
     senha: false,
+    cpf: false,
 };
 
 const eventofoco = ({ target }) => {
@@ -34,18 +39,15 @@ const eventofocoout = ({ target }) => {
         const span = target.previousElementSibling;
         span.classList.remove("span-ativo");
     }
-
     digitado[target.name] = true;
     eventoinserir();
 };
 
-// const login_button = (event) => {
-//     event.preventDefault();
-//     window.location = "../Site/index.html";
-// };
-
 const eventoinserir = () => {
-    const [nome, email, senha] = inputs;
+    const nome = document.querySelector('input[name="nome_de_usuario"]');
+    const email = document.querySelector('input[name="email"]');
+    const senha = document.querySelector('input[name="senha"]');
+    const cpf = document.querySelector('input[name="cpf"]');
 
     if (digitado.nome) {
         if (nome.value.trim() !== "") {
@@ -73,6 +75,18 @@ const eventoinserir = () => {
         email.classList.remove("valido");
     }
 
+    if (digitado.cpf) {
+        if (validarCPF(cpf.value)) {
+            cpf.classList.add("valido");
+            cpf.classList.remove("invalido");
+            erro_input_cpf.style.display = "none";
+        } else {
+            cpf.classList.add("invalido");
+            cpf.classList.remove("valido");
+            erro_input_cpf.style.display = "block";
+        }
+    }
+
     if (senha.value.length >= 8 && validarSenha(senha.value)) {
         senha.classList.add("valido");
         senha.classList.remove("invalido");
@@ -90,6 +104,7 @@ const eventoinserir = () => {
     if (
         nome.value &&
         validarEmail(email.value) &&
+        validarCPF(cpf.value) &&
         senha.value.length >= 8 &&
         validarSenha(senha.value)
     ) {
@@ -102,7 +117,6 @@ const eventoinserir = () => {
 
 const eventoInput = (e) => {
     digitado[e.target.name] = true;
-
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
         eventoinserir();
@@ -132,6 +146,48 @@ function mostrarsenha() {
     }
 }
 
+const validarCPF = (cpf) => {
+    cpf = cpf.replace(/[^\d]+/g, "");
+    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+
+    let soma = 0;
+    for (let i = 0; i < 9; i++) soma += parseInt(cpf.charAt(i)) * (10 - i);
+    let resto = 11 - (soma % 11);
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.charAt(9))) return false;
+
+    soma = 0;
+    for (let i = 0; i < 10; i++) soma += parseInt(cpf.charAt(i)) * (11 - i);
+    resto = 11 - (soma % 11);
+    if (resto === 10 || resto === 11) resto = 0;
+    return resto === parseInt(cpf.charAt(10));
+};
+
+inputCPF.addEventListener("input", () => {
+    let value = inputCPF.value.replace(/\D/g, "");
+    if (value.length > 11) value = value.slice(0, 11);
+    value = value.replace(/(\d{3})(\d)/, "$1.$2");
+    value = value.replace(/(\d{3})(\d)/, "$1.$2");
+    value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    inputCPF.value = value;
+});
+
 inputs.forEach((input) => input.addEventListener("input", eventoInput));
 inputs.forEach((input) => input.addEventListener("focus", eventofoco));
 inputs.forEach((input) => input.addEventListener("focusout", eventofocoout));
+
+const botaoAdmin = document.getElementById("mostrarAdmin");
+const campoTipo = document.getElementById("tipoUsuario");
+
+botaoAdmin.addEventListener("click", () => {
+    const ativado = campoTipo.value === "admin";
+    if (ativado) {
+        campoTipo.value = "cliente";
+        botaoAdmin.textContent = "Cadastrar como administrador";
+        botaoAdmin.classList.remove("ativo");
+    } else {
+        campoTipo.value = "admin";
+        botaoAdmin.textContent = "Modo administrador ativado";
+        botaoAdmin.classList.add("ativo");
+    }
+});
