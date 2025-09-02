@@ -63,7 +63,6 @@ $usuario = $result->fetch_assoc();
     }
 
     .logout-button {
-      display: block;
       margin: 30px auto 0;
       padding: 10px 20px;
       background-color: #ff4d4d;
@@ -73,11 +72,48 @@ $usuario = $result->fetch_assoc();
       cursor: pointer;
       font-size: 16px;
       transition: background 0.3s ease;
+       width:100px;
+      height:40px;
+      text-align:center;
+      margin-right:100px;
+    }
+
+     .cancelar {
+      width:100px;
+      height:40px;
+      margin: 30px auto 0;
+      padding: 10px 20px;
+      background-color: #eeee;
+      color: gray;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+      transition: color 0.3s ease;
+      text-align:center;
+      margin-left:100px;
+    }
+
+    .buttons_div{
+      width:100%;
+      height:120px;
+      display:flex;
+      flex-direction: row;
+      justify-content:center;
+      align-items:center;
+      justify-content:space-between;
     }
 
     .logout-button:hover {
       background-color: #e60000;
     }
+
+    .cancelar:hover {
+      background-color: lightgrey;
+      color:white;
+    }
+
   </style>
 </head>
 <body>
@@ -99,9 +135,18 @@ $usuario = $result->fetch_assoc();
   <p><span class="label">Senha:</span> ********</p>
 
   <form method="post" action="../Login/logout.php">
-    <button type="submit" class="logout-button">Sair</button>
+    <div class="buttons_div">
+      <button type = "button" onclick="cancelar()" class= "cancelar">Cancelar</button>
+      <button type="submit" class="logout-button">Sair</button>
+    </div>
   </form>
 </div>
+
+<script>
+    function cancelar() {
+        window.location.href = "../Site/index.html";
+    }
+</script>
 
 </body>
 </html>
