@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selecionar Produto</title>
+  <link rel="stylesheet" href="selecionar.css" />
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Selecione um Produto</h2>
+
+    <div class="produtos-container" id="listaProdutos">
+      <div class="produto-card" data-codigo="P001">P001 - Notebook Dell</div>
+      <div class="produto-card" data-codigo="P002">P002 - Monitor LG</div>
+      <div class="produto-card" data-codigo="P003">P003 - Mouse Logitech</div>
+      <div class="produto-card" data-codigo="P004">P004 - Teclado Mecânico</div>
+    </div>
+
+    <div class="botao-editar">
+      <form action="editar_produto.html" method="GET" onsubmit="return verificarSelecao()">
+        <input type="hidden" name="codigo" id="produtoSelecionado">
+        <button type="submit" class="btn-enviar">Editar Produto Selecionado</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

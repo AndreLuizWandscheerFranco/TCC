@@ -1,20 +1,35 @@
 <?php
-// Conexão
 $conn = new mysqli("localhost", "root", "root", "banco_de_dados");
 if ($conn->connect_error) die("Erro: " . $conn->connect_error);
 
-// Consulta
-$resultado = $conn->query("SELECT * FROM uprodutos");
+$nome = $_POST['nome'];
+$valor = $_POST['valor'];
+$fabricante = $_POST['fabricante'];
+$descricao = $_POST['descricao'];
+$avaliacao = $_POST['avaliacao'];
+$id_pagamento = $_POST['id_pagamento'] ?: NULL; 
 
-echo "<h2>Lista de Usuários</h2>";
+if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+    
+    $extensao = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
+    $novo_nome = uniqid() . "." . $extensao; 
+    $caminho = "../imagens_produtos/" . $novo_nome; 
+    
+    if (move_uploaded_file($_FILES['imagem']['tmp_name'], $caminho)) {
 
-if ($resultado->num_rows > 0) {
-    echo "<ul>";
-    while ($linha = $resultado->fetch_assoc()) {
-        echo "<li>{$linha['nome']} ({$linha['email']})</li>";
+        $sql = " UPDATE produto (nome, valor, fabricante, descricao, avaliacao, imagem, id_pagamento)
+                VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sdssdsi", $nome, $valor, $fabricante, $descricao, $avaliacao, $caminho, $id_pagamento);
+        $stmt->execute();
+        
+        header("Location: ./tela_atualizar.html");
+        exit();
+    } else {
+        die("Erro ao enviar a imagem.");
     }
-    echo "</ul>";
+
 } else {
-    echo "Nenhum usuário cadastrado.";
+    die("Nenhuma imagem enviada.");
 }
 ?>
