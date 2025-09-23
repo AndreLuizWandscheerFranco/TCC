@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seleção de Produto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+        --blue: #021130;
+        --medlightblue: #1c4588;
+        --lightblue: #3c81c6;
+        --white: #ffff;
+        --light-gray: #ececec;
+        --deep-gray: #343434;
+        --medium-gray: #a7a7a7;
+        --whitesmoke: whitesmoke;
+        --black: #000000;
+        --gray: #c4c4c4;
+    }
+
+    body {
+        background: linear-gradient(135deg, var(--blue), var(--medlightblue));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: "Lexend Deca", sans-serif;
+    }
+
+    .form-container {
+        background-color: var(--white);
+        padding: 30px 50px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(2, 17, 48, 0.5);
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+    }
+
+    h2 {
+        color: var(--blue);
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    select {
+        width: 100%;
+        padding: 10px 18px;
+        border: 1.8px solid var(--gray);
+        border-radius: 6px;
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--deep-gray);
+        background-color: var(--light-gray);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        outline: none;
+    }
+
+    select:focus {
+        border-color: var(--lightblue);
+        background-color: var(--whitesmoke);
+        box-shadow: 0 0 8px var(--lightblue);
+    }
+
+    .botoes-form {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .btn-enviar,
+    .btn-cancelar {
+        border-radius: 6px;
+        padding: 12px 24px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s ease;
+        width: 200px;
+    }
+
+    .btn-enviar {
+        background-color: var(--lightblue);
+        color: var(--white);
+        box-shadow: 0 0 12px var(--gray);
+    }
+
+    .btn-enviar:hover {
+        background-color: var(--medlightblue);
+    }
+
+    .btn-cancelar {
+        background-color: var(--gray);
+        color: var(--white);
+    }
+
+    .btn-cancelar:hover {
+        background-color: var(--medium-gray);
+    }
+
+    button:disabled {
+        background-color: var(--medium-gray) !important;
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Selecione um Produto</h2>
+
+    <form>
+      <select id="produtoSelect">
+        <option value="">-- Selecione --</option>
+        <option value="1">Notebook Dell XPS 13</option>
+        <option value="2">Smartphone Samsung Galaxy S21</option>
+        <option value="3">Monitor LG UltraWide</option>
+      </select>
+
+      <div class="botoes-form">
+        <button type="button" class="btn-enviar" id="btnEditar" disabled>Editar</button>
+        <button type="button" class="btn-cancelar" id="btnExcluir" disabled>Excluir</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const selectProduto = document.getElementById('produtoSelect');
+    const btnEditar = document.getElementById('btnEditar');
+    const btnExcluir = document.getElementById('btnExcluir');
+
+    selectProduto.addEventListener('change', () => {
+      const selecionado = selectProduto.value !== "";
+      btnEditar.disabled = !selecionado;
+      btnExcluir.disabled = !selecionado;
+    });
+  </script>
+</body>
+</html>
