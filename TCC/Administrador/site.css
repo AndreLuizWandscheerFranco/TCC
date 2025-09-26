@@ -136,10 +136,6 @@ header {
     justify-content: space-between;
 }
 
-.nav-left #menu-logo{
-    margin-left: 20px;
-}
-
 .nav-left #mi2 {
     cursor: pointer;
     margin-left: 20px;
