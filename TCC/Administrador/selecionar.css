@@ -39,7 +39,7 @@ h2 {
     margin-bottom: 25px;
 }
 
-.produtos-container {
+#produtos-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;

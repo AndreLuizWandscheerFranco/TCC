@@ -11,22 +11,71 @@
   <div class="form-container">
     <h2>Selecione um Produto</h2>
 
-    <div class="produtos-container" id="listaProdutos">
-      <div class="produto-card" data-codigo="P001">P001 - Notebook Dell</div>
-      <div class="produto-card" data-codigo="P002">P002 - Monitor LG</div>
-      <div class="produto-card" data-codigo="P003">P003 - Mouse Logitech</div>
-      <div class="produto-card" data-codigo="P004">P004 - Teclado Mecânico</div>
+    <div id="produtos-container" id="listaProdutos">
+      
     </div>
 
     <div class="botao-editar">
-      <form action="editar_produto.html" method="GET" onsubmit="return verificarSelecao()">
+      <form action="tela_atualizar.php" method="post" onsubmit="return verificarSelecao()">
         <input type="hidden" name="codigo" id="produtoSelecionado">
         <button type="submit" class="btn-enviar">Editar Produto Selecionado</button>
       </form>
     </div>
   </div>
+ 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const produtoCards = document.querySelectorAll(".produto-card");
 
-  <script src="script.js"></script>
+      produtoCards.forEach(card => {
+        card.addEventListener("click", function() {
+          produtoCards.forEach(p => p.classList.remove("selected"));
+
+          card.classList.add("selected");
+
+          const produtoCodigo = card.getAttribute("data-codigo");
+          document.getElementById("produtoSelecionado").value = produtoCodigo;
+        });
+      });
+
+      window.verificarSelecao = function() {
+        const produtoSelecionado = document.getElementById("produtoSelecionado").value;
+        if (!produtoSelecionado) {
+          alert("Por favor, selecione um produto antes de continuar.");
+          return false;
+        }
+        return true;
+      };
+    });
+
+    fetch("../Site/produtos.php")
+    .then((response) => response.json())
+    .then((produtos) => {
+        const container = document.getElementById("produtos-container");
+        container.innerHTML = "";
+
+        produtos.forEach((produto) => {
+            const avaliacao = Math.round(produto.avaliacao);
+            let estrelas = "";
+            for (let i = 0; i < 5; i++) {
+                estrelas +=
+                    i < avaliacao
+                        ? '<i class="bi bi-star-fill"></i>'
+                        : '<i class="bi bi-star"></i>';
+            }
+
+            container.innerHTML += `
+                <div class="produto-card">
+                    <h2>${produto.nome}</h2>
+                    
+                </div>
+            `;
+        });
+    });
+
+  </script>
 </body>
 </html>
+
+
 
