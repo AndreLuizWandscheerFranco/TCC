@@ -144,6 +144,15 @@ btnFechar.addEventListener("click", function (e) {
 });
 
 function adicionar(elemento) {
+
+     fetch('verifica_login.php')
+        .then(response => response.json())
+        .then(data => {
+            if (!data.logado) {
+                window.location.href = "../carrinho/carrinho.html";
+                return;
+}});
+    
     const produto = elemento.closest(".produto");
 
     const nome = produto.querySelector("h1").innerText;
@@ -172,6 +181,7 @@ function adicionar(elemento) {
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
     window.location.href = "../carrinho/destino2.html";
+    
 }
 
 fetch("./produtos.php")
