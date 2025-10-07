@@ -5,10 +5,10 @@ session_start();
 $conn = new mysqli("localhost", "root", "root", "Banco_de_dados");
 if ($conn->connect_error) die("Erro: " . $conn->connect_error);
 
-if (!isset($_SESSION['produto']['id_produto'])) {
+/*if (!isset($_SESSION['produto']['id_produto'])) {
     header("Location: ../Login/login.html");
     exit;
-}
+}*/
 
 $id_usuario = $_SESSION['produto']['id_produto'];
 
