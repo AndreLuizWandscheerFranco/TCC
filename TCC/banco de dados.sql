@@ -41,3 +41,16 @@ CREATE TABLE produto (
     FOREIGN KEY (id_pagamento) REFERENCES pagamento(id_pagamento)
 );
 
+insert into produto (nome,valor,fabricante,descricao,avaliacao,imagem) values ('celular', '3000', 'sansung', 'celular sansung 256gb', '4', '../imagens_produtos/68d6db9f1f7b0.webp');
+
+insert into produto (nome, valor, fabricante, descricao, avaliacao, imagem) values ('Mouse', '361', 'Redragon', 'Redragon Mouse para jogos M913 Impact Elite', '5', '../imagens_produtos/68d6dbe6d26e3.jpg');
+
+insert into produto (nome, valor, fabricante, descricao, avaliacao, imagem) values ('Teclado', '188', 'Redragon', 'Teclado Mecânico Redragon', '4', '../imagens_produtos/68d6dc1bb05a8.jpg');
+
+insert into produto (nome, valor, fabricante, descricao, avaliacao, imagem) values ('Monitor', '459.99', 'Pichau', 'Monitor Gamer Pichau', '3', '../imagens_produtos/68d6de93258e7.jpg');
+
+insert into produto (nome, valor, fabricante, descricao, avaliacao, imagem) values ('Placa de vídeo', '4399.99', 'Galax', 'Placa de Video GALAX GeForce RTX 5070', '4', '../imagens_produtos/68d6df0984f48.jpg');
+
+insert into produto (nome, valor, fabricante, descricao, avaliacao, imagem) values ('Memória', '848', 'Fury', 'KF432C16BB/32 - Memória de 32GB', '5', '../imagens_produtos/68d6df5c61664.jpg');
+
+
