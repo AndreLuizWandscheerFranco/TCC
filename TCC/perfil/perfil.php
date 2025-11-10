@@ -2,11 +2,12 @@
 session_start();
 
 $conn = new mysqli("localhost", "root", "root", "Banco_de_dados");
-if ($conn->connect_error) die("Erro: " . $conn->connect_error);
+if ($conn->connect_error)
+  die("Erro: " . $conn->connect_error);
 
 if (!isset($_SESSION['usuario']['id_usuarios'])) {
-    header("Location: ../Login/login.html");
-    exit;
+  header("Location: ../Login/login.html");
+  exit;
 }
 
 $id_usuario = $_SESSION['usuario']['id_usuarios'];
@@ -20,6 +21,7 @@ $usuario = $result->fetch_assoc();
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Perfil do Usuário</title>
@@ -80,28 +82,32 @@ $usuario = $result->fetch_assoc();
     }
   </style>
 </head>
+
 <body>
 
-<div class="perfil-box">
-  <h2><i class="bi bi-person-circle"></i> Perfil do Usuário</h2>
+  <div class="perfil-box">
+    <h2><i class="bi bi-person-circle"></i> Perfil do Usuário</h2>
 
-  <p><span class="label">Nome de Usuário:</span> <?= htmlspecialchars($usuario['Nome_de_usuario'] ?? 'Não informado') ?></p>
-  <p><span class="label">Email:</span> <?= htmlspecialchars($usuario['email'] ?? 'Não informado') ?></p>
-  <p><span class="label">Nome completo:</span> <?= htmlspecialchars($usuario['nome'] ?? 'Não informado') ?></p>
-  <p><span class="label">Telefone:</span> <?= htmlspecialchars($usuario['telefone'] ?? 'Não informado') ?></p>
-  <p><span class="label">CEP:</span> <?= htmlspecialchars($usuario['cep'] ?? 'Não informado') ?></p>
-  <p><span class="label">Estado:</span> <?= htmlspecialchars($usuario['estado'] ?? 'Não informado') ?></p>
-  <p><span class="label">Cidade:</span> <?= htmlspecialchars($usuario['cidade'] ?? 'Não informado') ?></p>
-  <p><span class="label">Bairro:</span> <?= htmlspecialchars($usuario['bairro'] ?? 'Não informado') ?></p>
-  <p><span class="label">Rua:</span> <?= htmlspecialchars($usuario['rua'] ?? 'Não informado') ?></p>
-  <p><span class="label">Número:</span> <?= htmlspecialchars($usuario['numero'] ?? 'Não informado') ?></p>
-  <p><span class="label">Complemento:</span> <?= htmlspecialchars($usuario['complemento'] ?? 'Não informado') ?></p>
-  <p><span class="label">Senha:</span> ********</p>
+    <p><span class="label">Nome de Usuário:</span>
+      <?= htmlspecialchars($usuario['Nome_de_usuario'] ?? 'Não informado') ?></p>
+    <p><span class="label">Email:</span> <?= htmlspecialchars($usuario['email'] ?? 'Não informado') ?></p>
+    <p><span class="label">Nome completo:</span> <?= htmlspecialchars($usuario['nome'] ?? 'Não informado') ?></p>
+    <p><span class="label">Telefone:</span> <?= htmlspecialchars($usuario['telefone'] ?? 'Não informado') ?></p>
+    <p><span class="label">CEP:</span> <?= htmlspecialchars($usuario['cep'] ?? 'Não informado') ?></p>
+    <p><span class="label">Estado:</span> <?= htmlspecialchars($usuario['estado'] ?? 'Não informado') ?></p>
+    <p><span class="label">Cidade:</span> <?= htmlspecialchars($usuario['cidade'] ?? 'Não informado') ?></p>
+    <p><span class="label">Bairro:</span> <?= htmlspecialchars($usuario['bairro'] ?? 'Não informado') ?></p>
+    <p><span class="label">Rua:</span> <?= htmlspecialchars($usuario['rua'] ?? 'Não informado') ?></p>
+    <p><span class="label">Número:</span> <?= htmlspecialchars($usuario['numero'] ?? 'Não informado') ?></p>
+    <p><span class="label">Complemento:</span> <?= htmlspecialchars($usuario['complemento'] ?? 'Não informado') ?></p>
+    <p><span class="label">Senha:</span> ********</p>
 
-  <form method="post" action="../Login/logout.php">
-    <button type="submit" class="logout-button">Sair</button>
-  </form>
-</div>
+    <form method="post" action="../Login/logout.php">
+      <button type="submit" class="logout-button">Sair</button>
+      <button type="button"><a href="editar_perfil.php">edit</a></button>
+    </form>
+  </div>
 
 </body>
+
 </html>
