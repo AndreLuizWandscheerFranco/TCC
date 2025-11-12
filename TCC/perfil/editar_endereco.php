@@ -1,9 +1,8 @@
 <?php
-session_start();
-
 $conn = new mysqli("localhost", "root", "root", "Banco_de_dados");
 if ($conn->connect_error)
     die("Erro: " . $conn->connect_error);
+session_start();
 
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['usuario']['id_usuarios'])) {
     die("Usuário não logado.");
@@ -11,31 +10,32 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['usuario']['id_usuarios']))
 
 $id = $_SESSION['usuario']['id_usuarios'];
 
-$sql = "SELECT * FROM usuarios WHERE id_usuarios = ?";
+$sql = "SELECT cep, rua, bairro, complemento, numero, cidade, estado FROM usuarios WHERE id_usuarios = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
 $stmt->execute();
 $result = $stmt->get_result();
-$usuario = $result->fetch_assoc();
+$endereco = $result->fetch_assoc();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['Nome'];
-    $nome_usuario = $_POST['Nome_de_usuario'];
-    $cpf = $_POST['cpf'];
-    $telefone = $_POST['telefone'];
-    $email = $_POST['email'];
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+    $cep = $_POST['cep'];
+    $rua = $_POST['rua'];
+    $bairro = $_POST['bairro'];
+    $complemento = $_POST['complemento'];
+    $numero = $_POST['numero'];
+    $cidade = $_POST['cidade'];
+    $estado = $_POST['estado'];
 
     $update = "UPDATE usuarios 
-               SET Nome=?, Nome_de_usuario=?, cpf=?, telefone=?, email=?, senha=? 
+               SET cep=?, rua=?, bairro=?, complemento=?, numero=?, cidade=?, estado=?
                WHERE id_usuarios=?";
     $stmt = $conn->prepare($update);
-    $stmt->bind_param("ssssssi", $nome, $nome_usuario, $cpf, $telefone, $email, $senha, $id);
+    $stmt->bind_param("sssssssi", $cep, $rua, $bairro, $complemento, $numero, $cidade, $estado, $id);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Dados atualizados com sucesso!'); window.location='perfil.php';</script>";
+        echo "<script>alert('Endereço atualizado com sucesso!'); window.location='perfil.php';</script>";
     } else {
-        echo "<script>alert('Erro ao atualizar.');</script>";
+        echo "<script>alert('Erro ao atualizar endereço.');</script>";
     }
 }
 ?>
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
     <meta charset="UTF-8">
-    <title>Editar Perfil</title>
+    <title>Editar Endereço</title>
     <style>
         :root {
             --azul-marinho: #1e3a8a;
@@ -53,6 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             --fundo: #f5f7fa;
             --branco: #fff;
             --preto: #111;
+            --cinza: #6c757d;
+            --cinza-escuro: #5a6268;
         }
 
         * {
@@ -116,50 +118,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             box-shadow: 0 0 6px rgba(30, 58, 138, 0.3);
         }
 
-        p {
-            margin-top: 12px;
-            font-size: 15px;
-            color: #333;
-        }
-
-        button {
-            width: 100%;
-            background-color: var(--azul-marinho);
-            color: var(--branco);
-            border: none;
-            padding: 12px;
-            margin-top: 18px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-        }
-
-        button:hover {
-            background-color: var(--azul-escuro);
-            transform: scale(1.02);
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.4rem;
-            }
-
-            input,
-            button {
-                font-size: 14px;
-            }
-        }
-
         .button-group {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             gap: 15px;
             margin-top: 20px;
         }
@@ -178,56 +139,77 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .cancel-button {
-            background-color: #6c757d;
-            color: white;
+            background-color: var(--cinza);
+            color: var(--branco);
             text-decoration: none;
         }
 
         .cancel-button:hover {
-            background-color: #5a6268;
-            transform: scale(1.02);
+            background-color: var(--cinza-escuro);
+            transform: scale(1.03);
         }
 
         .save-button {
             background-color: var(--azul-marinho);
             color: var(--branco);
-            margin-bottom: 20px;
         }
 
         .save-button:hover {
             background-color: var(--azul-escuro);
-            transform: scale(1.02);
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            input,
+            button {
+                font-size: 14px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 
-
 <body>
 
     <div class="container">
-        <h2>Editar Perfil</h2>
+        <h2>Editar Endereço</h2>
         <form method="POST">
-            <label>Nome:</label>
-            <input type="text" name="Nome" value="<?= htmlspecialchars($usuario['Nome'] ?? 'não informado') ?>"
+            <label>CEP:</label>
+            <input type="text" name="cep" value="<?= htmlspecialchars($endereco['cep'] ?? 'não informado') ?>" required>
+
+            <label>Rua:</label>
+            <input type="text" name="rua" value="<?= htmlspecialchars($endereco['rua'] ?? 'não informado') ?>" required>
+
+            <label>Bairro:</label>
+            <input type="text" name="bairro" value="<?= htmlspecialchars($endereco['bairro'] ?? 'não informado') ?>"
                 required>
 
-            <label>Nome de Usuário:</label>
-            <input type="text" name="Nome_de_usuario"
-                value="<?= htmlspecialchars($usuario['Nome_de_usuario'] ?? 'não informado') ?>" required>
+            <label>Complemento:</label>
+            <input type="text" name="complemento"
+                value="<?= htmlspecialchars($endereco['complemento'] ?? 'não informado') ?>">
 
-            <label>CPF:</label>
-            <input type="text" name="cpf" value="<?= htmlspecialchars($usuario['cpf'] ?? 'não informado') ?>" required>
-
-            <label>Telefone:</label>
-            <input type="text" name="telefone" value="<?= htmlspecialchars($usuario['telefone'] ?? 'não informado') ?>"
+            <label>Número:</label>
+            <input type="text" name="numero" value="<?= htmlspecialchars($endereco['numero'] ?? 'não informado') ?>"
                 required>
 
-            <label>Email:</label>
-            <input type="email" name="email" value="<?= htmlspecialchars($usuario['email'] ?? 'não informado') ?>"
+            <label>Cidade:</label>
+            <input type="text" name="cidade" value="<?= htmlspecialchars($endereco['cidade'] ?? 'não informado') ?>"
                 required>
 
-            <label>Senha:</label>
-            <input type="password" name="senha" maxlength="20" placeholder="Digite a nova senha" required>
+            <label>Estado:</label>
+            <input type="text" name="estado" value="<?= htmlspecialchars($endereco['estado'] ?? 'não informado') ?>"
+                required>
 
             <div class="button-group">
                 <a href="../Site/index.html" class="cancel-button">Cancelar</a>

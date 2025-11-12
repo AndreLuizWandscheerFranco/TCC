@@ -64,21 +64,67 @@ $usuario = $result->fetch_assoc();
       color: #00d4ff;
     }
 
-    .logout-button {
-      display: block;
-      margin: 30px auto 0;
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .logout-button,
+    .edit-button {
       padding: 10px 20px;
-      background-color: #ff4d4d;
-      color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       font-size: 16px;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+    }
+
+    .logout-button {
+      background-color: #ff4d4d;
+      color: white;
     }
 
     .logout-button:hover {
       background-color: #e60000;
+    }
+
+    .edit-button {
+      background-color: white;
+      color: gray;
+    }
+
+    .edit-button:hover {
+      background-color: #dcdcdc;
+    }
+
+    .edit-button a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .canc-button a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .canc-button {
+      display: block;
+      padding: 10px 20px;
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .canc-button:hover {
+      background-color: #5a6268;
     }
   </style>
 </head>
@@ -103,8 +149,9 @@ $usuario = $result->fetch_assoc();
     <p><span class="label">Senha:</span> ********</p>
 
     <form method="post" action="../Login/logout.php">
+      <button type="button" class="canc-button"><a href="../Site/index.html">Cancelar</a></button>
       <button type="submit" class="logout-button">Sair</button>
-      <button type="button"><a href="editar_perfil.php">edit</a></button>
+      <button type="button" class="edit-button"><a href="editar_perfil.php">Editar</a></button>
     </form>
   </div>
 
