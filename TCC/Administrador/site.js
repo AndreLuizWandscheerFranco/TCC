@@ -236,3 +236,23 @@ function comprarProduto(id) {
             }
         });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const inputBusca = document.querySelector(".input-buscar input");
+    const container = document.getElementById("produtos-container");
+
+    inputBusca.addEventListener("input", () => {
+        const termo = inputBusca.value.toLowerCase();
+        const produtos = container.querySelectorAll(".produto");
+
+        produtos.forEach((produto) => {
+            const nome = produto.querySelector("h1").innerText.toLowerCase();
+
+            if (nome.includes(termo)) {
+                produto.style.display = "block";
+            } else {
+                produto.style.display = "none";
+            }
+        });
+    });
+});

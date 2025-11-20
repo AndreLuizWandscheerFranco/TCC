@@ -39,7 +39,6 @@ if (localStorage.lgpd == "sim") {
     msgCookies.classList.add("mostrar");
 }
 
-
 function abrirformcep() {
     const janela = document.getElementById("cepform");
     janela.classList.add("abrirformcep");
@@ -83,4 +82,3 @@ btnFechar.addEventListener("click", function (e) {
     e.preventDefault();
     formulario.reset();
 });
-
